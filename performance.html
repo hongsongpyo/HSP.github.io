@@ -11,17 +11,12 @@
 
   <style>
     :root {
-      --bg: #050505;
-      --bg-soft: #0d0d0f;
-      --panel: rgba(255, 255, 255, 0.05);
-      --panel-strong: rgba(255, 255, 255, 0.10);
-      --border: rgba(255, 255, 255, 0.12);
       --text: #f5f1eb;
-      --muted: #d2c7bd;
       --accent: #ff7a1a;
-      --shadow: 0 20px 80px rgba(0, 0, 0, 0.35);
-      --glass-blur: blur(14px);
-      --max: 1200px;
+      --seat-light: rgba(180, 180, 180, 0.36);
+      --seat-mid: rgba(120, 120, 120, 0.42);
+      --seat-dark: rgba(78, 78, 78, 0.50);
+      --seat-border: rgba(255, 255, 255, 0.14);
     }
 
     * {
@@ -39,7 +34,7 @@
       font-family: "Noto Sans KR", sans-serif;
       background:
         linear-gradient(120deg, rgba(0,0,0,0.66), rgba(0,0,0,0.30)),
-        url("Images/performance/orchestra-bg.JPG") center center / cover no-repeat;
+        url("Images/performance/orchestra-bg.jpg") center center / cover no-repeat;
       color: var(--text);
       overflow: hidden;
     }
@@ -73,8 +68,6 @@
       justify-content: space-between;
       padding: 18px 28px;
       background: transparent;
-      border-bottom: none;
-      backdrop-filter: none;
     }
 
     .brand {
@@ -146,7 +139,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.07) 0%, rgba(0,0,0,0.12) 55%, rgba(5,5,5,0.30) 100%);
+        linear-gradient(180deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.11) 55%, rgba(5,5,5,0.30) 100%);
       z-index: 2;
       pointer-events: none;
     }
@@ -163,10 +156,10 @@
 
     .performance-panel {
       position: relative;
-      width: min(1540px, calc(100vw - 64px));
-      height: min(790px, calc(100vh - 120px));
-      min-height: 640px;
-      background: rgba(255,255,255,0.015);
+      width: min(1560px, calc(100vw - 56px));
+      height: min(800px, calc(100vh - 116px));
+      min-height: 650px;
+      background: rgba(255,255,255,0.012);
       border: 1px solid rgba(255,255,255,0.05);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
@@ -189,7 +182,7 @@
       left: 50%;
       bottom: 18px;
       transform: translateX(-50%);
-      width: min(1380px, 97%);
+      width: min(1410px, 97.5%);
       height: 87%;
       z-index: 4;
     }
@@ -205,12 +198,12 @@
       left: 50%;
       bottom: 0;
       transform: translateX(-50%);
-      width: 98.5%;
+      width: 99%;
       height: 95%;
-      border: 3px solid rgba(255, 122, 26, 0.88);
+      border: 3px solid rgba(255, 122, 26, 0.92);
       border-bottom: none;
-      border-top-left-radius: 1600px;
-      border-top-right-radius: 1600px;
+      border-top-left-radius: 9999px;
+      border-top-right-radius: 9999px;
       background: transparent;
       box-shadow: 0 0 24px rgba(255, 122, 26, 0.08);
     }
@@ -221,31 +214,32 @@
       left: 50%;
       bottom: 0;
       transform: translateX(-50%);
-      width: 98.5%;
-      border-top: 3px solid rgba(255, 122, 26, 0.88);
-      box-shadow: 0 0 24px rgba(255, 122, 26, 0.06);
+      width: 99%;
+      border-top: 3px solid rgba(255, 122, 26, 0.92);
+      box-shadow: 0 0 24px rgba(255, 122, 26, 0.05);
     }
 
     .section-link {
       position: absolute;
       display: block;
       z-index: 3;
-      transition: transform 0.28s ease;
       transform-origin: center center;
+      transition: transform 0.28s ease, filter 0.28s ease;
     }
 
     .section-link:hover {
       transform: scale(1.05);
+      filter: brightness(1.05);
     }
 
     .section-link.profile-link:hover {
       transform: translateX(-50%) scale(1.06);
     }
 
-    .seat-rows {
+    .seats-wrap {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 9px;
       align-items: center;
     }
 
@@ -255,41 +249,57 @@
       gap: 10px;
     }
 
-    .seat-row.offset-1 { padding-left: 18px; }
-    .seat-row.offset-2 { padding-left: 34px; }
-    .seat-row.offset-3 { padding-left: 52px; }
+    .seat-row.shift-1 { margin-left: 14px; }
+    .seat-row.shift-2 { margin-left: 28px; }
+    .seat-row.shift-3 { margin-left: 42px; }
 
     .seat {
-      width: 54px;
+      width: 58px;
       height: 24px;
-      border-radius: 5px;
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 4px;
+      border: 1px solid var(--seat-border);
       box-shadow: 0 8px 24px rgba(0,0,0,0.10);
-      transition: background 0.28s ease, border-color 0.28s ease, transform 0.28s ease;
+      transition: background 0.28s ease, border-color 0.28s ease;
     }
 
+    .tone-light .seat { background: var(--seat-light); }
+    .tone-mid .seat { background: var(--seat-mid); }
+    .tone-dark .seat { background: var(--seat-dark); }
+
     .section-link:hover .seat {
-      background: rgba(255, 122, 26, 0.20);
       border-color: rgba(255, 122, 26, 0.44);
+      background: rgba(255, 122, 26, 0.20);
     }
 
     .section-label {
-      margin-top: 14px;
+      margin-top: 12px;
       text-align: center;
       font-family: "Playfair Display", serif;
-      font-size: 1.34rem;
+      font-size: 1.28rem;
       color: var(--text);
       text-shadow: 0 4px 16px rgba(0,0,0,0.35);
       letter-spacing: 0.01em;
     }
 
-    .section-link.profile-link {
+    .rotate-left-sm  { transform: rotate(-18deg); }
+    .rotate-left-md  { transform: rotate(-28deg); }
+    .rotate-right-sm { transform: rotate(18deg); }
+    .rotate-right-md { transform: rotate(28deg); }
+
+    .section-link:hover .rotate-left-sm,
+    .section-link:hover .rotate-left-md,
+    .section-link:hover .rotate-right-sm,
+    .section-link:hover .rotate-right-md {
+      transform-origin: center center;
+    }
+
+    .profile-link {
+      position: absolute;
       left: 50%;
-      bottom: 7%;
+      bottom: 8%;
       transform: translateX(-50%);
-      width: 154px;
-      height: 154px;
+      width: 156px;
+      height: 156px;
       border-radius: 50%;
       overflow: hidden;
       background: rgba(255, 122, 26, 0.08);
@@ -298,9 +308,10 @@
       -webkit-backdrop-filter: blur(10px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.14);
       transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+      z-index: 5;
     }
 
-    .section-link.profile-link:hover {
+    .profile-link:hover {
       border-color: rgba(255, 122, 26, 1);
       box-shadow: 0 0 0 6px rgba(255, 122, 26, 0.10), 0 8px 24px rgba(0,0,0,0.18);
     }
@@ -311,7 +322,7 @@
       border-radius: 50%;
       background:
         linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.38)),
-        url("Images/performance/profile.JPG") center center / cover no-repeat;
+        url("Images/performance/profile.jpg") center center / cover no-repeat;
     }
 
     .profile-text {
@@ -340,31 +351,31 @@
       color: rgba(255,255,255,0.88);
     }
 
-    /* positions */
+    /* placement based on uploaded arrangement */
     .seat-concert {
       left: 50%;
-      top: 14%;
+      top: 12%;
       transform: translateX(-50%);
     }
 
     .seat-photo {
-      left: 16%;
-      bottom: 35%;
+      left: 25.5%;
+      bottom: 32.5%;
     }
 
     .seat-youtube {
-      left: 2.8%;
-      bottom: 14%;
+      left: 8.5%;
+      bottom: 13.5%;
     }
 
     .seat-sheet {
-      right: 16%;
-      bottom: 35%;
+      right: 26%;
+      bottom: 33%;
     }
 
     .seat-hidden {
-      right: 2.8%;
-      bottom: 14%;
+      right: 7.2%;
+      bottom: 13.8%;
     }
 
     .hidden-label {
@@ -373,50 +384,46 @@
 
     @media (max-width: 1280px) {
       .performance-panel {
-        width: min(98vw, 1540px);
+        width: min(98vw, 1560px);
       }
 
-      .stage-shell-wrap {
-        width: 98%;
-      }
-
-      .section-link.profile-link {
-        width: 136px;
-        height: 136px;
+      .profile-link {
+        width: 138px;
+        height: 138px;
       }
 
       .seat {
-        width: 48px;
+        width: 50px;
         height: 22px;
       }
 
       .seat-row {
-        gap: 9px;
+        gap: 8px;
       }
 
-      .seat-rows {
-        gap: 9px;
+      .seats-wrap {
+        gap: 8px;
       }
-    }
-
-    @media (max-width: 1024px) {
-      .seat-photo { left: 12%; }
-      .seat-sheet { right: 12%; }
-      .seat-youtube { left: 1%; }
-      .seat-hidden { right: 1%; }
 
       .section-label {
         font-size: 1.12rem;
       }
+    }
 
+    @media (max-width: 1024px) {
       .seat {
-        width: 40px;
+        width: 42px;
         height: 19px;
       }
 
-      .seat-row.offset-1 { padding-left: 14px; }
-      .seat-row.offset-2 { padding-left: 24px; }
-      .seat-row.offset-3 { padding-left: 38px; }
+      .seat-photo { left: 22.5%; }
+      .seat-sheet { right: 23%; }
+      .seat-youtube { left: 5%; }
+      .seat-hidden { right: 4.2%; }
+
+      .section-label {
+        font-size: 1rem;
+      }
     }
 
     @media (max-width: 900px) {
@@ -454,19 +461,9 @@
         min-height: 540px;
       }
 
-      .stage-shell-wrap {
-        width: 99%;
-        height: 88%;
-      }
-
-      .section-label {
-        font-size: 0.98rem;
-        margin-top: 10px;
-      }
-
-      .section-link.profile-link {
-        width: 110px;
-        height: 110px;
+      .profile-link {
+        width: 112px;
+        height: 112px;
       }
 
       .profile-text strong {
@@ -478,88 +475,51 @@
       }
 
       .seat {
-        width: 32px;
+        width: 34px;
         height: 16px;
       }
 
-      .seat-row,
-      .seat-rows {
-        gap: 7px;
+      .seat-row {
+        gap: 6px;
       }
 
-      .seat-row.offset-1 { padding-left: 8px; }
-      .seat-row.offset-2 { padding-left: 14px; }
-      .seat-row.offset-3 { padding-left: 20px; }
-
-      .seat-concert {
-        top: 18%;
-      }
-
-      .seat-photo {
-        left: 10%;
-        bottom: 36%;
-      }
-
-      .seat-sheet {
-        right: 10%;
-        bottom: 36%;
-      }
-
-      .seat-youtube {
-        left: 1%;
-        bottom: 16%;
-      }
-
-      .seat-hidden {
-        right: 1%;
-        bottom: 16%;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .performance-panel {
-        height: min(700px, calc(100vh - 120px));
-        min-height: 500px;
-      }
-
-      .seat {
-        width: 24px;
-        height: 13px;
-        border-radius: 4px;
+      .seats-wrap {
+        gap: 6px;
       }
 
       .section-label {
-        font-size: 0.82rem;
+        font-size: 0.86rem;
+        margin-top: 9px;
       }
 
-      .seat-concert {
-        top: 20%;
+      .seat-concert { top: 16%; }
+      .seat-photo { left: 21%; bottom: 34%; }
+      .seat-youtube { left: 4%; bottom: 16%; }
+      .seat-sheet { right: 21%; bottom: 34%; }
+      .seat-hidden { right: 3%; bottom: 16%; }
+    }
+
+    @media (max-width: 640px) {
+      .seat {
+        width: 24px;
+        height: 12px;
+        border-radius: 3px;
       }
 
-      .seat-photo {
-        left: 6%;
-        bottom: 36%;
+      .profile-link {
+        width: 94px;
+        height: 94px;
       }
 
-      .seat-sheet {
-        right: 6%;
-        bottom: 36%;
+      .section-label {
+        font-size: 0.74rem;
       }
 
-      .seat-youtube {
-        left: 0;
-        bottom: 18%;
-      }
-
-      .seat-hidden {
-        right: 0;
-        bottom: 18%;
-      }
-
-      .section-link.profile-link {
-        width: 92px;
-        height: 92px;
-      }
+      .seat-concert { top: 18%; }
+      .seat-photo { left: 16%; bottom: 35%; }
+      .seat-youtube { left: 1%; bottom: 18%; }
+      .seat-sheet { right: 16%; bottom: 35%; }
+      .seat-hidden { right: 0; bottom: 18%; }
     }
   </style>
 </head>
@@ -586,23 +546,25 @@
         <div class="stage-shell-wrap">
           <div class="stage-shell">
 
-            <!-- Concert / winds -->
-            <a href="performance-concert.html" class="section-link seat-concert" aria-label="Concert page">
-              <div class="seat-rows">
-                <div class="seat-row offset-2">
+            <!-- Concert : woodwinds/brass center -->
+            <a href="performance-concert.html" class="section-link tone-light seat-concert" aria-label="Concert page">
+              <div class="seats-wrap">
+                <div class="seat-row shift-1">
+                  <span class="seat"></span>
+                  <span class="seat"></span>
+                </div>
+                <div class="seat-row shift-2">
                   <span class="seat"></span>
                   <span class="seat"></span>
                   <span class="seat"></span>
                 </div>
-                <div class="seat-row offset-1">
+                <div class="seat-row shift-1">
                   <span class="seat"></span>
                   <span class="seat"></span>
                   <span class="seat"></span>
                   <span class="seat"></span>
                 </div>
                 <div class="seat-row">
-                  <span class="seat"></span>
-                  <span class="seat"></span>
                   <span class="seat"></span>
                   <span class="seat"></span>
                   <span class="seat"></span>
@@ -611,16 +573,46 @@
               <div class="section-label">Concert</div>
             </a>
 
-            <!-- Photo / second -->
-            <a href="performance-photo.html" class="section-link seat-photo" aria-label="Photo page">
-              <div class="seat-rows">
-                <div class="seat-row offset-2">
+            <!-- Photo : 2nd violin cluster -->
+            <a href="performance-photo.html" class="section-link tone-light seat-photo" aria-label="Photo page">
+              <div class="seats-wrap">
+                <div class="seat-row rotate-left-sm">
+                  <span class="seat"></span>
+                </div>
+                <div class="seat-row rotate-left-sm">
+                  <span class="seat"></span>
+                  <span class="seat"></span>
+                </div>
+                <div class="seat-row rotate-left-md">
+                  <span class="seat"></span>
+                  <span class="seat"></span>
+                </div>
+                <div class="seat-row rotate-left-sm">
+                  <span class="seat"></span>
+                  <span class="seat"></span>
+                </div>
+                <div class="seat-row rotate-right-sm">
+                  <span class="seat"></span>
+                  <span class="seat"></span>
+                </div>
+              </div>
+              <div class="section-label">Photo</div>
+            </a>
+
+            <!-- Youtube : 1st violin front cluster -->
+            <a href="performance-youtube.html" class="section-link tone-mid seat-youtube" aria-label="Youtube page">
+              <div class="seats-wrap">
+                <div class="seat-row">
                   <span class="seat"></span>
                   <span class="seat"></span>
                   <span class="seat"></span>
                 </div>
-                <div class="seat-row offset-1">
+                <div class="seat-row">
                   <span class="seat"></span>
+                  <span class="seat"></span>
+                  <span class="seat"></span>
+                </div>
+                <div class="seat-row">
                   <span class="seat"></span>
                   <span class="seat"></span>
                   <span class="seat"></span>
@@ -630,31 +622,8 @@
                   <span class="seat"></span>
                   <span class="seat"></span>
                   <span class="seat"></span>
-                  <span class="seat"></span>
                 </div>
-              </div>
-              <div class="section-label">Photo</div>
-            </a>
-
-            <!-- Youtube / first -->
-            <a href="performance-youtube.html" class="section-link seat-youtube" aria-label="Youtube page">
-              <div class="seat-rows">
-                <div class="seat-row offset-3">
-                  <span class="seat"></span>
-                  <span class="seat"></span>
-                  <span class="seat"></span>
-                  <span class="seat"></span>
-                </div>
-                <div class="seat-row offset-2">
-                  <span class="seat"></span>
-                  <span class="seat"></span>
-                  <span class="seat"></span>
-                  <span class="seat"></span>
-                  <span class="seat"></span>
-                </div>
-                <div class="seat-row offset-1">
-                  <span class="seat"></span>
-                  <span class="seat"></span>
+                <div class="seat-row">
                   <span class="seat"></span>
                   <span class="seat"></span>
                   <span class="seat"></span>
@@ -664,15 +633,39 @@
               <div class="section-label">Youtube</div>
             </a>
 
-            <!-- Sheet / viola -->
-            <a href="performance-sheet.html" class="section-link seat-sheet" aria-label="Sheet page">
-              <div class="seat-rows">
-                <div class="seat-row offset-2">
+            <!-- Sheet : viola cluster -->
+            <a href="performance-sheet.html" class="section-link tone-light seat-sheet" aria-label="Sheet page">
+              <div class="seats-wrap">
+                <div class="seat-row rotate-right-sm">
+                  <span class="seat"></span>
+                  <span class="seat"></span>
+                </div>
+                <div class="seat-row rotate-right-md">
+                  <span class="seat"></span>
+                  <span class="seat"></span>
+                </div>
+                <div class="seat-row rotate-left-sm">
+                  <span class="seat"></span>
+                  <span class="seat"></span>
+                </div>
+                <div class="seat-row rotate-left-sm">
+                  <span class="seat"></span>
+                  <span class="seat"></span>
+                </div>
+              </div>
+              <div class="section-label">Sheet</div>
+            </a>
+
+            <!-- Hidden : cello + bass merged -->
+            <a href="performance-easteregg.html" class="section-link tone-dark seat-hidden" aria-label="Hidden page">
+              <div class="seats-wrap">
+                <div class="seat-row">
+                  <span class="seat"></span>
                   <span class="seat"></span>
                   <span class="seat"></span>
                   <span class="seat"></span>
                 </div>
-                <div class="seat-row offset-1">
+                <div class="seat-row">
                   <span class="seat"></span>
                   <span class="seat"></span>
                   <span class="seat"></span>
@@ -685,28 +678,7 @@
                   <span class="seat"></span>
                   <span class="seat"></span>
                 </div>
-              </div>
-              <div class="section-label">Sheet</div>
-            </a>
-
-            <!-- Hidden / cello -->
-            <a href="performance-easteregg.html" class="section-link seat-hidden" aria-label="Hidden page">
-              <div class="seat-rows">
-                <div class="seat-row offset-3">
-                  <span class="seat"></span>
-                  <span class="seat"></span>
-                  <span class="seat"></span>
-                  <span class="seat"></span>
-                </div>
-                <div class="seat-row offset-2">
-                  <span class="seat"></span>
-                  <span class="seat"></span>
-                  <span class="seat"></span>
-                  <span class="seat"></span>
-                  <span class="seat"></span>
-                </div>
-                <div class="seat-row offset-1">
-                  <span class="seat"></span>
+                <div class="seat-row">
                   <span class="seat"></span>
                   <span class="seat"></span>
                   <span class="seat"></span>
@@ -717,8 +689,8 @@
               <div class="hidden-label">Hidden</div>
             </a>
 
-            <!-- Profile -->
-            <a href="performance-profile.html" class="section-link profile-link" aria-label="Profile page">
+            <!-- Profile / conductor -->
+            <a href="performance-profile.html" class="profile-link" aria-label="Profile page">
               <div class="profile-photo"></div>
               <div class="profile-text">
                 <strong>Profile</strong>
