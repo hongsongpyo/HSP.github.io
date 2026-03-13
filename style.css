@@ -222,11 +222,6 @@ a {
     url("images/HOME/10.jpg");
 }
 
-.hero-slide:nth-child(11) {
-  background-image:
-    linear-gradient(120deg, rgba(0,0,0,0.74), rgba(0,0,0,0.34)),
-    url("images/HOME/11.png");
-}
 
 .performance-hero .hero-bg {
   position: absolute;
