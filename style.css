@@ -275,17 +275,17 @@ a {
 }
 
 .glass-panel {
-  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.035));
-  border: 1px solid var(--border);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  box-shadow: var(--shadow);
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.25);
 }
 
 .intro-card {
-  max-width: 520px;
-  padding: 22px 22px;
-  border-radius: 22px;
+  max-width: 480px;
+  padding: 20px 20px;
+  border-radius: 20px;
 }
 
 .wide {
