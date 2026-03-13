@@ -275,7 +275,7 @@ a {
 }
 
 .glass-panel {
-  background: rgba(255,255,255,0.035);
+  background: rgba(255,255,255,0.005);
   border: 1px solid rgba(255,255,255,0.08);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -283,7 +283,7 @@ a {
 }
 
 .intro-card {
-  max-width: 480px;
+  max-width: 490px;
   padding: 20px 20px;
   border-radius: 20px;
 }
