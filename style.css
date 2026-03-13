@@ -283,9 +283,9 @@ a {
 }
 
 .intro-card {
-  max-width: 610px;
-  padding: 30px 28px;
-  border-radius: 26px;
+  max-width: 520px;
+  padding: 22px 22px;
+  border-radius: 22px;
 }
 
 .wide {
@@ -548,4 +548,24 @@ h1, h2, h3 {
   .site-footer {
     flex-direction: column;
   }
+
+}
+.hero-contact{
+  position:absolute;
+  bottom:28px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:0.85rem;
+  color:rgba(255,255,255,0.85);
+  letter-spacing:0.02em;
+}
+
+.contact-label{
+  color:var(--accent);
+  font-weight:700;
+}
+
+.contact-space{
+  display:inline-block;
+  width:28px;
 }
