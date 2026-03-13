@@ -1,41 +1,103 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hong Songpyo</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Songpyo Hong Portfolio</title>
+  <meta name="description" content="Industrial Engineer & Clarinetist Songpyo Hong Portfolio" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="home-page">
+  <div class="noise"></div>
 
-  <header>
-    <h1>홍송표 Portfolio</h1>
-    <p>Clarinet Performance & Research Portfolio</p>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-main">Songpyo Hong</span>
+      <span class="brand-sub">Portfolio</span>
+    </a>
+
+    <nav class="top-nav">
+      <a href="performance.html">Performance</a>
+      <a href="research.html">Research</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="performance.html">Performance</a>
-    <a href="research.html">Research</a>
-  </nav>
-
   <main>
-    <section>
-      <h2>Performance</h2>
-      <p>연주 활동, 공연 이력, 영상, 사진 아카이브</p>
-      <p><a href="performance.html">Performance Profile 보기</a></p>
+    <section class="hero hero-home">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content container">
+        <div class="glass-panel intro-card reveal">
+          <p class="eyebrow">Clarinet Performance & Research Portfolio</p>
+          <h1>
+            <span class="korean-name">홍송표</span>
+            <span class="english-name">Songpyo Hong</span>
+          </h1>
+          <p class="role">Industrial Engineer / Clarinetist</p>
+
+          <p class="intro-text">
+            데이터를 통해 사용자 경험을 해석하고, 음악을 통해 감각적인 몰입을 설계합니다.
+            이 포트폴리오는 연주 활동과 연구 작업을 함께 담아낸 개인 아카이브입니다.
+            Performance에서는 공연 이력과 영상, 사진, 아카이브를,
+            Research에서는 논문, 프로젝트, 기록을 정리합니다.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="performance.html">Explore Performance</a>
+            <a class="btn btn-ghost" href="research.html">Explore Research</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll">SCROLL</div>
     </section>
 
-    <section>
-      <h2>Research</h2>
-      <p>논문, 프로젝트, 작업물 및 연구 기록</p>
-      <p><a href="research.html">Research Profile 보기</a></p>
+    <section class="home-preview container">
+      <a class="feature-card reveal tilt-card" href="performance.html">
+        <div class="feature-image performance-image"></div>
+        <div class="feature-gradient"></div>
+        <div class="feature-content glass-mini">
+          <p class="eyebrow">Performance</p>
+          <h2>연주 활동과 무대 기록</h2>
+          <p>
+            공연 이력, 영상, 사진 아카이브와 함께
+            클라리넷 연주자로서의 활동을 정리합니다.
+          </p>
+          <span class="feature-link">View Performance</span>
+        </div>
+      </a>
+
+      <a class="feature-card reveal tilt-card" href="research.html">
+        <div class="feature-image research-image"></div>
+        <div class="feature-gradient"></div>
+        <div class="feature-content glass-mini">
+          <p class="eyebrow">Research</p>
+          <h2>논문, 프로젝트, 작업물</h2>
+          <p>
+            산업공학, UI/UX, 데이터 기반 분석과 연구 기록을
+            시각적으로 구성한 리서치 프로필입니다.
+          </p>
+          <span class="feature-link">View Research</span>
+        </div>
+      </a>
     </section>
   </main>
 
-  <footer>
-    <p>© Hong Songpyo</p>
+  <footer class="site-footer container">
+    <div class="footer-left">
+      <p class="footer-title">Contact</p>
+      <p><a href="mailto:your@email.com">your@email.com</a></p>
+      <p><a href="https://instagram.com/your_instagram" target="_blank" rel="noopener noreferrer">@your_instagram</a></p>
+    </div>
+    <div class="footer-right">
+      <p>© 2026 Songpyo Hong</p>
+    </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

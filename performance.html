@@ -1,44 +1,105 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Performance | Hong Songpyo</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Performance | Songpyo Hong</title>
+  <meta name="description" content="Performance profile of Songpyo Hong" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="sub-page performance-page">
+  <div class="noise"></div>
 
-  <header>
-    <h1>Performance Profile</h1>
-    <p>Clarinetist</p>
+  <header class="site-header solid">
+    <a class="brand" href="index.html">
+      <span class="brand-main">Songpyo Hong</span>
+      <span class="brand-sub">Performance</span>
+    </a>
+
+    <nav class="top-nav">
+      <a href="index.html">HOME</a>
+      <a href="#about">Profile</a>
+      <a href="#archive">Archive</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="performance.html">Performance</a>
-    <a href="research.html">Research</a>
-  </nav>
-
   <main>
-    <section>
-      <h2>홍송표</h2>
-      <p>클라리넷 연주 활동과 공연 기록을 정리하는 페이지입니다.</p>
+    <section class="sub-hero performance-hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="container sub-hero-content reveal">
+        <div class="glass-panel wide">
+          <p class="eyebrow">Performance Profile</p>
+          <h1>Clarinet Performance Archive</h1>
+          <p class="sub-copy">
+            무대 위의 흐름과 시간, 사운드의 결을 담아낸 연주 포트폴리오입니다.
+            공연 이력, 영상, 사진, 활동 기록을 감성적인 화면 구조로 정리합니다.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Sections</h2>
-      <ul>
-        <li><a href="performances.html">Performances</a></li>
-        <li><a href="videos.html">Videos</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="updates-performance.html">Updates</a></li>
-      </ul>
+    <section id="about" class="content-section container">
+      <div class="section-head reveal">
+        <p class="eyebrow">About</p>
+        <h2>연주자 소개</h2>
+      </div>
+
+      <div class="grid-two">
+        <div class="glass-panel reveal">
+          <p>
+            클라리넷을 중심으로 오케스트라, 윈드 오케스트라, 앙상블 등 다양한 무대 경험을 쌓아가고 있습니다.
+            연주자의 해석과 공간의 분위기를 함께 전달할 수 있는 아카이브를 지향합니다.
+          </p>
+        </div>
+        <div class="image-block reveal performance-detail-image"></div>
+      </div>
+    </section>
+
+    <section id="archive" class="content-section container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Archive</p>
+        <h2>공연 기록</h2>
+      </div>
+
+      <div class="archive-grid">
+        <article class="glass-panel reveal">
+          <p class="card-label">Concerts</p>
+          <h3>공연 이력</h3>
+          <p>정기연주회, 객원 연주, 윈드 오케스트라, 앙상블 활동 기록</p>
+        </article>
+
+        <article class="glass-panel reveal">
+          <p class="card-label">Video</p>
+          <h3>영상 아카이브</h3>
+          <p>연주 영상, 리허설 영상, 기록용 클립 정리</p>
+        </article>
+
+        <article class="glass-panel reveal">
+          <p class="card-label">Photo</p>
+          <h3>사진 아카이브</h3>
+          <p>무대 사진, 연습 장면, 홍보용 이미지 구성</p>
+        </article>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© Hong Songpyo</p>
+  <footer id="contact" class="site-footer container">
+    <div class="footer-left">
+      <p class="footer-title">Performance Contact</p>
+      <p><a href="mailto:your@email.com">your@email.com</a></p>
+      <p><a href="https://instagram.com/your_instagram" target="_blank" rel="noopener noreferrer">@your_instagram</a></p>
+    </div>
+    <div class="footer-right">
+      <p><a href="research.html">Go to Research</a></p>
+    </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,44 +1,106 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research | Hong Songpyo</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | Songpyo Hong</title>
+  <meta name="description" content="Research profile of Songpyo Hong" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="sub-page research-page">
+  <div class="noise"></div>
 
-  <header>
-    <h1>Research Profile</h1>
-    <p>Industrial Engineering / Research</p>
+  <header class="site-header solid">
+    <a class="brand" href="index.html">
+      <span class="brand-main">Songpyo Hong</span>
+      <span class="brand-sub">Research</span>
+    </a>
+
+    <nav class="top-nav">
+      <a href="index.html">HOME</a>
+      <a href="#overview">Overview</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="performance.html">Performance</a>
-    <a href="research.html">Research</a>
-  </nav>
-
   <main>
-    <section>
-      <h2>홍송표</h2>
-      <p>논문, 프로젝트, 연구 작업물을 정리하는 페이지입니다.</p>
+    <section class="sub-hero research-hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="container sub-hero-content reveal">
+        <div class="glass-panel wide">
+          <p class="eyebrow">Research Profile</p>
+          <h1>Industrial Engineering & UX Research</h1>
+          <p class="sub-copy">
+            산업공학, UI/UX, 데이터 분석과 시각화를 바탕으로
+            사람과 시스템의 상호작용을 연구합니다.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>Sections</h2>
-      <ul>
-        <li><a href="papers.html">Papers</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="works.html">Works</a></li>
-        <li><a href="updates-research.html">Updates</a></li>
-      </ul>
+    <section id="overview" class="content-section container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Overview</p>
+        <h2>연구 방향</h2>
+      </div>
+
+      <div class="grid-two">
+        <div class="glass-panel reveal">
+          <p>
+            사용자의 경험을 데이터와 시스템 관점에서 해석하는 연구에 관심이 있습니다.
+            VR/UX, 인간공학, 시각적 인터페이스, 데이터 기반 의사결정과 같은 주제를 중심으로
+            논문과 프로젝트를 축적해 나가고 있습니다.
+          </p>
+        </div>
+        <div class="image-block reveal research-detail-image"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="content-section container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Projects</p>
+        <h2>작업물과 연구 기록</h2>
+      </div>
+
+      <div class="archive-grid">
+        <article class="glass-panel reveal">
+          <p class="card-label">Paper</p>
+          <h3>논문 작업</h3>
+          <p>작성 중인 논문, 수정 기록, 핵심 기여 정리</p>
+        </article>
+
+        <article class="glass-panel reveal">
+          <p class="card-label">Project</p>
+          <h3>프로젝트</h3>
+          <p>UI/UX, 데이터 시각화, 실험 설계 기반 프로젝트 아카이브</p>
+        </article>
+
+        <article class="glass-panel reveal">
+          <p class="card-label">Notes</p>
+          <h3>연구 기록</h3>
+          <p>아이디어 메모, 설계 흐름, 참고 자료 정리</p>
+        </article>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© Hong Songpyo</p>
+  <footer id="contact" class="site-footer container">
+    <div class="footer-left">
+      <p class="footer-title">Research Contact</p>
+      <p><a href="mailto:your@email.com">your@email.com</a></p>
+      <p><a href="https://instagram.com/your_instagram" target="_blank" rel="noopener noreferrer">@your_instagram</a></p>
+    </div>
+    <div class="footer-right">
+      <p><a href="performance.html">Go to Performance</a></p>
+    </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
