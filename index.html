@@ -20,7 +20,7 @@
     </a>
 
     <nav class="top-nav">
-      <a href="performance.html">Performance</a>
+      <a href="performance.html" id="performance-link">Performance</a>
       <a href="research.html">Research</a>
     </nav>
   </header>
@@ -59,25 +59,79 @@
             클라리넷 연주자로서 음악적 해석과 무대 경험을 기록합니다.<br>
             이 웹사이트는 연구와 연주라는 두 영역을 함께 담아낸 개인 아카이브입니다.
           </p>
-
-          
         </div>
       </div>
+
       <p class="contact-line">
-            <span class="contact-label">Email</span>
-            <a href="mailto:songpyoh@gmail.com">songpyoh@gmail.com</a>
+        <span class="contact-label">Email</span>
+        <a href="mailto:songpyoh@gmail.com">songpyoh@gmail.com</a>
 
-            <span class="contact-separator"></span>
+        <span class="contact-separator"></span>
 
-            <span class="contact-label">Instagram</span>
-            <a href="https://instagram.com/twins03173" target="_blank" rel="noopener noreferrer">
-              @twins03173
-            </a>
-          </p>
-
+        <span class="contact-label">Instagram</span>
+        <a href="https://instagram.com/twins03173" target="_blank" rel="noopener noreferrer">
+          @twins03173
+        </a>
+      </p>
     </section>
   </main>
 
+  <!-- Performance page transition overlay -->
+  <div class="performance-transition" id="performance-transition" aria-hidden="true">
+    <div class="transition-blackout"></div>
+    <div class="transition-panel">
+      <div class="transition-shell">
+        <div class="transition-profile-ring"></div>
+
+        <div class="transition-cluster cluster-concert">
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="transition-cluster cluster-photo">
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="transition-cluster cluster-youtube">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="transition-cluster cluster-sheet">
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="transition-cluster cluster-hidden">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
+  <script>
+    const performanceLink = document.getElementById("performance-link");
+    const performanceTransition = document.getElementById("performance-transition");
+
+    if (performanceLink && performanceTransition) {
+      performanceLink.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        document.body.classList.add("performance-transition-active");
+
+        setTimeout(() => {
+          window.location.href = performanceLink.href;
+        }, 900);
+      });
+    }
+  </script>
 </body>
 </html>
