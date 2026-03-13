@@ -290,8 +290,8 @@ a {
 }
 
 .intro-card {
-  width: min(380px, 88vw);
-  max-width: 380px;
+  width: min(420px, 88vw);
+  max-width: 420px;
   padding: 10px 14px;
 }
 
@@ -554,5 +554,4 @@ h1, h2, h3 {
 .hero-content{
   display:flex;
   justify-content:flex-start;
-  padding-left:6vw;
 }
