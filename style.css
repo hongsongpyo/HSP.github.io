@@ -264,43 +264,47 @@ a {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.24) 52%, rgba(5,5,5,0.88) 100%);
+    linear-gradient(180deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.18) 52%, rgba(5,5,5,0.82) 100%);
 }
 
+/* 홈 화면 연락처 */
 .hero-contact {
   position: fixed;
-  bottom: 18px;
   left: 50%;
+  bottom: 18px;
   transform: translateX(-50%);
-  z-index: 30;
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.88);
+  z-index: 40;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.9);
   letter-spacing: 0.01em;
   white-space: nowrap;
+  text-align: center;
 }
 
-@media (max-width: 768px) {
-  .hero-contact {
-    bottom: 14px;
-    font-size: 0.68rem;
-    white-space: normal;
-    text-align: center;
-    width: calc(100% - 32px);
-  }
+.contact-label {
+  color: var(--accent);
+  font-weight: 700;
 }
 
+.contact-space {
+  display: inline-block;
+  width: 28px;
+}
+
+/* glass */
 .glass-panel {
-  background: rgba(255,255,255,0.015);
-  border: 1px solid rgba(255,255,255,0.06);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+  background: rgba(255,255,255,0.01);
+  border: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.14);
 }
 
 .intro-card {
-  max-width: 1000px;
-  padding: 10px 22px;
-  border-radius: 22px;
+  width: min(520px, 92vw);
+  max-width: 520px;
+  padding: 14px 18px;
+  border-radius: 20px;
 }
 
 .wide {
@@ -333,7 +337,7 @@ h1, h2, h3 {
 
 .english-name {
   font-family: "Playfair Display", serif;
-  font-size: clamp(1.9rem, 4.1vw, 4.4rem);
+  font-size: clamp(2.2rem, 4.6vw, 4.6rem);
   color: #f0dfcf;
 }
 
@@ -342,6 +346,7 @@ h1, h2, h3 {
   font-size: 0.94rem;
   font-weight: 600;
   color: var(--accent);
+  white-space: nowrap;
 }
 
 .intro-text,
@@ -352,31 +357,9 @@ h1, h2, h3 {
 }
 
 .intro-text {
-  font-size: 0.85rem;
-  line-height: 1.6;
+  font-size: 0.84rem;
+  line-height: 1.58;
   color: rgba(245, 241, 235, 0.92);
-}
-
-.contact-line {
-  margin-top: 16px;
-  font-size: 0.76rem;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.82);
-  white-space: nowrap;
-}
-
-.contact-label {
-  color: var(--accent);
-  font-weight: 700;
-}
-
-.contact-line a {
-  color: rgba(255,255,255,0.88);
-}
-
-.contact-separator {
-  display: inline-block;
-  width: 18px;
 }
 
 .content-section {
@@ -539,7 +522,8 @@ h1, h2, h3 {
   }
 
   .intro-card {
-    max-width: 100%;
+    width: min(100%, 520px);
+    max-width: 520px;
     border-radius: 22px;
   }
 
@@ -548,44 +532,23 @@ h1, h2, h3 {
   }
 
   .role {
-    font-size: 0.86rem;
+    font-size: 0.8rem;
+    white-space: normal;
   }
 
   .intro-text {
-    font-size: 0.82rem;
-    line-height: 1.8;
+    font-size: 0.8rem;
+    line-height: 1.72;
   }
 
-  .contact-line{
-    position:absolute;
-    bottom:22px;
-    left:50%;
-    transform:translateX(-50%);
-    font-size:0.85rem;
-    color:rgba(255,255,255,0.85);
+  .hero-contact {
+    bottom: 12px;
+    font-size: 0.68rem;
+    white-space: normal;
+    width: calc(100% - 24px);
   }
 
   .site-footer {
     flex-direction: column;
   }
-
-}
-.hero-contact{
-  position:absolute;
-  bottom:28px;
-  left:50%;
-  transform:translateX(-50%);
-  font-size:0.85rem;
-  color:rgba(255,255,255,0.85);
-  letter-spacing:0.02em;
-}
-
-.contact-label{
-  color:var(--accent);
-  font-weight:700;
-}
-
-.contact-space{
-  display:inline-block;
-  width:28px;
 }
