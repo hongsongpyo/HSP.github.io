@@ -290,8 +290,8 @@ a {
 }
 
 .intro-card {
-  width: min(420px, 88vw);
-  max-width: 420px;
+  width: min(460px, 88vw);
+  max-width: 460px;
   padding: 10px 14px;
 }
 
