@@ -228,6 +228,18 @@ a {
     url("Images/HOME/11.png");
 }
 
+.hero-slide:nth-child(12) {
+  background-image:
+    linear-gradient(120deg, rgba(0,0,0,0.74), rgba(0,0,0,0.34)),
+    url("Images/HOME/12.png");
+}
+
+.hero-slide:nth-child(13) {
+  background-image:
+    linear-gradient(120deg, rgba(0,0,0,0.74), rgba(0,0,0,0.34)),
+    url("Images/HOME/13.png");
+}
+
 
 .performance-hero .hero-bg {
   position: absolute;
