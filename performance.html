@@ -258,18 +258,22 @@
       width: 54px;
       height: 24px;
       border-radius: 5px;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.25);
+
+     background: rgba(255,255,255,0.18);
+     border: 1px solid rgba(255,255,255,0.25);
+
       backdrop-filter: blur(2px);
       -webkit-backdrop-filter: blur(2px);
-      box-shadow:
+
+      box-shadow: 
         0 6px 18px rgba(0,0,0,0.18),
         inset 0 1px 0 rgba(255,255,255,0.15);
-      transition:
+
+      transition: 
         background 0.28s ease,
-        border-color 0.28s ease,
-        transform 0.28s ease;
-    }
+       border-color 0.28s ease,
+       transform 0.28s ease;
+      }
 
     .section-link:hover .seat {
       background: rgba(255, 122, 26, 0.20);
@@ -348,6 +352,7 @@
       transform: translateX(-50%);
     }
 
+    /* 세바, 비올라 조금 위로 */
     .seat-photo {
       left: 17%;
       bottom: 43%;
@@ -363,6 +368,7 @@
       bottom: 43%;
     }
 
+    /* Hidden을 퍼바와 같은 높이 */
     .seat-hidden {
       right: 3.8%;
       bottom: 18%;
@@ -543,9 +549,38 @@
         height: 92px;
       }
     }
+
+    /* 페이지 진입 애니메이션 */
+    body.page-enter .performance-panel {
+      animation: panelRiseIn 0.95s cubic-bezier(.22,.8,.24,1) both;
+    }
+
+    body.page-enter .performance-page {
+      animation: bgFadeIn 1s ease both;
+    }
+
+    @keyframes panelRiseIn {
+      from {
+        opacity: 0;
+        transform: translateY(140px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bgFadeIn {
+      from {
+        filter: brightness(0);
+      }
+      to {
+        filter: brightness(1);
+      }
+    }
   </style>
 </head>
-<body>
+<body class="page-enter">
   <div class="noise"></div>
 
   <header class="site-header">
