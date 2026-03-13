@@ -165,61 +165,67 @@ a {
 .hero-slide:nth-child(1) {
   background-image:
     linear-gradient(120deg, rgba(0,0,0,0.72), rgba(0,0,0,0.30)),
-    url("images/HOME/1.png");
+    url("Images/HOME/1.png");
 }
 
 .hero-slide:nth-child(2) {
   background-image:
     linear-gradient(120deg, rgba(0,0,0,0.72), rgba(0,0,0,0.34)),
-    url("images/HOME/2.JPG");
+    url("Images/HOME/2.JPG");
 }
 
 .hero-slide:nth-child(3) {
   background-image:
     linear-gradient(120deg, rgba(0,0,0,0.76), rgba(0,0,0,0.34)),
-    url("images/HOME/3.png");
+    url("Images/HOME/3.png");
 }
 
 .hero-slide:nth-child(4) {
   background-image:
     linear-gradient(120deg, rgba(0,0,0,0.74), rgba(0,0,0,0.34)),
-    url("images/HOME/4.JPG");
+    url("Images/HOME/4.JPG");
 }
 
 .hero-slide:nth-child(5) {
   background-image:
     linear-gradient(120deg, rgba(0,0,0,0.74), rgba(0,0,0,0.34)),
-    url("images/HOME/5.jpg");
+    url("Images/HOME/5.jpg");
 }
 
 .hero-slide:nth-child(6) {
   background-image:
     linear-gradient(120deg, rgba(0,0,0,0.74), rgba(0,0,0,0.34)),
-    url("images/HOME/6.JPG");
+    url("Images/HOME/6.JPG");
 }
 
 .hero-slide:nth-child(7) {
   background-image:
     linear-gradient(120deg, rgba(0,0,0,0.74), rgba(0,0,0,0.34)),
-    url("images/HOME/7.JPG");
+    url("Images/HOME/7.JPG");
 }
 
 .hero-slide:nth-child(8) {
   background-image:
     linear-gradient(120deg, rgba(0,0,0,0.74), rgba(0,0,0,0.34)),
-    url("images/HOME/8.JPG");
+    url("Images/HOME/8.JPG");
 }
 
 .hero-slide:nth-child(9) {
   background-image:
     linear-gradient(120deg, rgba(0,0,0,0.74), rgba(0,0,0,0.34)),
-    url("images/HOME/9.JPG");
+    url("Images/HOME/9.JPG");
 }
 
 .hero-slide:nth-child(10) {
   background-image:
     linear-gradient(120deg, rgba(0,0,0,0.74), rgba(0,0,0,0.34)),
-    url("images/HOME/10.jpg");
+    url("Images/HOME/10.jpg");
+}
+
+.hero-slide:nth-child(11) {
+  background-image:
+    linear-gradient(120deg, rgba(0,0,0,0.74), rgba(0,0,0,0.34)),
+    url("Images/HOME/11.png");
 }
 
 
