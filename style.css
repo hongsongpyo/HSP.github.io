@@ -290,10 +290,9 @@ a {
 }
 
 .intro-card {
-  width: min(460px, 90vw);
-  max-width: 460px;
+  width: min(380px, 88vw);
+  max-width: 380px;
   padding: 10px 14px;
-  border-radius: 18px;
 }
 
 .wide {
@@ -550,4 +549,10 @@ h1, h2, h3 {
 .contact-separator{
   display:inline-block;
   width:26px;
+}
+
+.hero-content{
+  display:flex;
+  justify-content:flex-start;
+  padding-left:6vw;
 }
