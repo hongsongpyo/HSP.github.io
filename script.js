@@ -1,6 +1,6 @@
 const header = document.querySelector(".site-header");
 const reveals = document.querySelectorAll(".reveal");
-const tiltCards = document.querySelectorAll(".tilt-card");
+const slides = document.querySelectorAll(".hero-slide");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 40) {
@@ -20,22 +20,12 @@ const observer = new IntersectionObserver((entries) => {
 
 reveals.forEach((item) => observer.observe(item));
 
-tiltCards.forEach((card) => {
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+if (slides.length > 0) {
+  let current = 0;
 
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = -((y - centerY) / centerY) * 5;
-    const rotateY = ((x - centerX) / centerX) * 5;
-
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
-  });
-});
+  setInterval(() => {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }, 5000);
+}
