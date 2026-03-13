@@ -268,18 +268,7 @@ a {
 }
 
 /* 홈 화면 연락처 */
-.hero-contact {
-  position: fixed;
-  left: 50%;
-  bottom: 18px;
-  transform: translateX(-50%);
-  z-index: 40;
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.9);
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-  text-align: center;
-}
+
 
 .contact-label {
   color: var(--accent);
@@ -301,10 +290,10 @@ a {
 }
 
 .intro-card {
-  width: min(520px, 92vw);
-  max-width: 520px;
-  padding: 14px 18px;
-  border-radius: 20px;
+  width: min(460px, 90vw);
+  max-width: 460px;
+  padding: 10px 14px;
+  border-radius: 18px;
 }
 
 .wide {
@@ -541,14 +530,24 @@ h1, h2, h3 {
     line-height: 1.72;
   }
 
-  .hero-contact {
-    bottom: 12px;
-    font-size: 0.68rem;
-    white-space: normal;
-    width: calc(100% - 24px);
-  }
+ 
 
   .site-footer {
     flex-direction: column;
   }
+}
+.contact-line{
+  position:fixed;
+  bottom:18px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:0.8rem;
+  color:rgba(255,255,255,0.9);
+  z-index:50;
+  white-space:nowrap;
+  text-align:center;
+}
+.contact-separator{
+  display:inline-block;
+  width:26px;
 }
