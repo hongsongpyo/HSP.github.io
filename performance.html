@@ -29,8 +29,8 @@
     }
 
     html {
-      scroll-behavior: smooth;
       height: 100%;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -38,7 +38,7 @@
       height: 100%;
       font-family: "Noto Sans KR", sans-serif;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.58), rgba(0,0,0,0.72)),
+        linear-gradient(120deg, rgba(0,0,0,0.66), rgba(0,0,0,0.30)),
         url("Images/PERFORMANCE/orchestra-bg.jpg") center center / cover no-repeat;
       color: var(--text);
       overflow: hidden;
@@ -72,8 +72,9 @@
       align-items: center;
       justify-content: space-between;
       padding: 18px 28px;
-      background: rgba(10, 10, 10, 0.22);
-      backdrop-filter: blur(8px);
+      background: transparent;
+      border-bottom: none;
+      backdrop-filter: none;
     }
 
     .brand {
@@ -145,7 +146,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.24) 52%, rgba(5,5,5,0.76) 100%);
+        linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.18) 55%, rgba(5,5,5,0.38) 100%);
       z-index: 2;
       pointer-events: none;
     }
@@ -156,17 +157,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 110px 28px 90px;
+      padding: 100px 28px 60px;
       z-index: 5;
     }
 
     .performance-panel {
       position: relative;
       width: min(1320px, calc(100vw - 120px));
-      height: min(700px, calc(100vh - 220px));
+      height: min(720px, calc(100vh - 180px));
       min-height: 580px;
-      background: rgba(255,255,255,0.01);
-      border: 1px solid rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.14);
@@ -178,8 +179,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at top left, rgba(255, 122, 26, 0.08), transparent 24%),
-        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+        radial-gradient(circle at top left, rgba(255, 122, 26, 0.06), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       pointer-events: none;
     }
 
@@ -195,7 +196,7 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
-      margin: 0 0 6px;
+      margin: 0;
     }
 
     .english-name {
@@ -206,27 +207,20 @@
     }
 
     .role {
-      margin: 0 0 10px;
+      margin: 8px 0 0;
       font-size: 0.94rem;
       font-weight: 600;
       color: var(--accent);
       white-space: nowrap;
     }
 
-    .intro-text {
-      font-size: 0.84rem;
-      line-height: 1.58;
-      color: rgba(245, 241, 235, 0.92);
-      max-width: 420px;
-    }
-
     .stage-shell-wrap {
       position: absolute;
       left: 50%;
-      bottom: 24px;
+      bottom: 20px;
       transform: translateX(-50%);
       width: min(1080px, 88%);
-      height: 75%;
+      height: 74%;
       z-index: 4;
     }
 
@@ -243,13 +237,11 @@
       transform: translateX(-50%);
       width: 92%;
       height: 90%;
-      border: 1.4px solid rgba(255,255,255,0.16);
+      border: 2px solid rgba(255, 122, 26, 0.72);
       border-bottom: none;
       border-top-left-radius: 1000px;
       border-top-right-radius: 1000px;
-      background:
-        radial-gradient(circle at 50% 110%, rgba(255, 122, 26, 0.08), transparent 42%);
-      box-shadow: inset 0 0 80px rgba(255,255,255,0.02);
+      background: transparent;
     }
 
     .stage-shell::after {
@@ -259,68 +251,68 @@
       bottom: 0;
       transform: translateX(-50%);
       width: 92%;
-      border-top: 1px solid rgba(255,255,255,0.12);
+      border-top: 2px solid rgba(255, 122, 26, 0.72);
     }
 
-    .seat-link {
+    .section-link {
       position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.12);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.14);
-      padding: 10px 14px;
-      transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+      display: block;
       z-index: 3;
+      transition: transform 0.28s ease;
     }
 
-    .seat-link:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255, 122, 26, 0.4);
-      background: rgba(255, 122, 26, 0.10);
+    .section-link:hover {
+      transform: scale(1.05);
     }
 
-    .seat-link .title {
-      display: block;
-      margin-bottom: 4px;
+    .section-link.profile-link:hover {
+      transform: translateX(-50%) scale(1.05);
+    }
+
+    .seat-grid {
+      display: grid;
+      gap: 10px;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .seat-grid.cols-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .seat-grid.cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .seat-grid.cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .seat {
+      width: 48px;
+      height: 22px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      transition: background 0.28s ease, border-color 0.28s ease;
+    }
+
+    .section-link:hover .seat {
+      background: rgba(255, 122, 26, 0.18);
+      border-color: rgba(255, 122, 26, 0.40);
+    }
+
+    .section-label {
+      margin-top: 12px;
+      text-align: center;
       font-family: "Playfair Display", serif;
-      font-size: 1.35rem;
-      line-height: 1;
+      font-size: 1.2rem;
       color: var(--text);
+      text-shadow: 0 4px 16px rgba(0,0,0,0.35);
     }
 
-    .seat-link .sub {
-      display: block;
-      font-size: 0.68rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.78);
-    }
-
-    .seat-sm {
-      min-width: 118px;
-      min-height: 58px;
-      border-radius: 18px;
-    }
-
-    .seat-md {
-      min-width: 148px;
-      min-height: 68px;
-      border-radius: 20px;
-    }
-
-    .seat-lg {
-      min-width: 186px;
-      min-height: 80px;
-      border-radius: 22px;
-    }
-
-    .profile-link {
-      position: absolute;
+    .section-link.profile-link {
       left: 50%;
       bottom: 8%;
       transform: translateX(-50%);
@@ -334,12 +326,10 @@
       -webkit-backdrop-filter: blur(10px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.14);
       transition: transform 0.28s ease, border-color 0.28s ease;
-      z-index: 5;
     }
 
-    .profile-link:hover {
-      transform: translateX(-50%) translateY(-6px);
-      border-color: rgba(255, 122, 26, 0.4);
+    .section-link.profile-link:hover {
+      border-color: rgba(255, 122, 26, 0.40);
     }
 
     .profile-photo {
@@ -379,67 +369,34 @@
 
     .seat-perc {
       left: 50%;
-      top: 8%;
+      top: 7%;
       transform: translateX(-50%);
     }
 
     .seat-winds {
       left: 50%;
-      top: 24%;
+      top: 21%;
       transform: translateX(-50%);
     }
 
     .seat-second {
-      left: 24%;
-      bottom: 36%;
+      left: 23%;
+      bottom: 34%;
     }
 
     .seat-first {
-      left: 10%;
-      bottom: 17%;
+      left: 9%;
+      bottom: 16%;
     }
 
     .seat-viola {
-      right: 26%;
-      bottom: 36%;
+      right: 25%;
+      bottom: 34%;
     }
 
     .seat-cello {
-      right: 12%;
-      bottom: 17%;
-    }
-
-    .panel-hint {
-      position: absolute;
-      right: 28px;
-      bottom: 20px;
-      font-size: 0.76rem;
-      color: rgba(255,255,255,0.46);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      z-index: 6;
-    }
-
-    .contact-line {
-      position: fixed;
-      bottom: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.9);
-      z-index: 50;
-      white-space: nowrap;
-      text-align: center;
-    }
-
-    .contact-label {
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .contact-separator {
-      display: inline-block;
-      width: 26px;
+      right: 11%;
+      bottom: 16%;
     }
 
     @media (max-width: 1200px) {
@@ -447,24 +404,14 @@
         width: min(96vw, 1320px);
       }
 
-      .seat-lg {
-        min-width: 164px;
-        min-height: 74px;
-      }
-
-      .seat-md {
-        min-width: 134px;
-        min-height: 62px;
-      }
-
-      .seat-sm {
-        min-width: 104px;
-        min-height: 54px;
-      }
-
-      .profile-link {
+      .section-link.profile-link {
         width: 122px;
         height: 122px;
+      }
+
+      .seat {
+        width: 42px;
+        height: 20px;
       }
     }
 
@@ -494,19 +441,18 @@
       }
 
       .performance-hero {
-        padding: 100px 18px 88px;
+        padding: 100px 18px 40px;
       }
 
       .performance-panel {
         width: 94vw;
-        height: min(700px, calc(100vh - 210px));
+        height: min(700px, calc(100vh - 170px));
         min-height: 520px;
       }
 
       .panel-copy {
         top: 24px;
         left: 24px;
-        max-width: 300px;
       }
 
       .english-name {
@@ -515,42 +461,13 @@
 
       .role {
         font-size: 0.8rem;
-        white-space: normal;
       }
 
-      .intro-text {
-        font-size: 0.78rem;
-        line-height: 1.65;
+      .section-label {
+        font-size: 0.94rem;
       }
 
-      .seat-link {
-        padding: 8px 10px;
-      }
-
-      .seat-link .title {
-        font-size: 1.02rem;
-      }
-
-      .seat-link .sub {
-        font-size: 0.58rem;
-      }
-
-      .seat-lg {
-        min-width: 122px;
-        min-height: 58px;
-      }
-
-      .seat-md {
-        min-width: 108px;
-        min-height: 52px;
-      }
-
-      .seat-sm {
-        min-width: 88px;
-        min-height: 46px;
-      }
-
-      .profile-link {
+      .section-link.profile-link {
         width: 98px;
         height: 98px;
       }
@@ -563,23 +480,18 @@
         font-size: 0.5rem;
       }
 
-      .contact-line {
-        font-size: 0.74rem;
-        white-space: normal;
-        width: calc(100% - 24px);
+      .seat {
+        width: 32px;
+        height: 16px;
+        gap: 8px;
+      }
+
+      .seat-grid {
+        gap: 8px;
       }
     }
 
     @media (max-width: 640px) {
-      .panel-copy {
-        max-width: 220px;
-      }
-
-      .intro-text,
-      .panel-hint {
-        display: none;
-      }
-
       .seat-first {
         left: 1%;
         bottom: 17%;
@@ -601,11 +513,15 @@
       }
 
       .seat-winds {
-        top: 25%;
+        top: 24%;
       }
 
       .seat-perc {
         top: 10%;
+      }
+
+      .section-label {
+        font-size: 0.82rem;
       }
     }
   </style>
@@ -635,77 +551,97 @@
             <span class="english-name">Songpyo Hong</span>
           </h1>
           <p class="role">Performance</p>
-          <p class="intro-text">
-            자리배치표에서 착안한 performance navigation입니다.<br>
-            각 섹션을 클릭하면 해당 하위 페이지로 이동합니다.
-          </p>
         </div>
 
         <div class="stage-shell-wrap">
           <div class="stage-shell">
-            <a href="performance-percussion.html" class="seat-link seat-md seat-perc">
-              <div>
-                <span class="title">Percussion</span>
-                <span class="sub">Timpani · Perc</span>
+
+            <a href="performance-percussion.html" class="section-link seat-perc" aria-label="Percussion page">
+              <div class="seat-grid cols-2">
+                <span class="seat"></span>
+                <span class="seat"></span>
               </div>
+              <div class="section-label">Percussion</div>
             </a>
 
-            <a href="performance-winds.html" class="seat-link seat-lg seat-winds">
-              <div>
-                <span class="title">Woodwinds & Brass</span>
-                <span class="sub">Flute · Oboe · Clarinet · Bassoon</span>
+            <a href="performance-winds.html" class="section-link seat-winds" aria-label="Woodwinds and Brass page">
+              <div class="seat-grid cols-4">
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
               </div>
+              <div class="section-label">Performances</div>
             </a>
 
-            <a href="performance-second-violin.html" class="seat-link seat-md seat-second">
-              <div>
-                <span class="title">Second Violin</span>
-                <span class="sub">Archive</span>
+            <a href="performance-second-violin.html" class="section-link seat-second" aria-label="Second section page">
+              <div class="seat-grid cols-3">
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
               </div>
+              <div class="section-label">Performances</div>
             </a>
 
-            <a href="performance-first-violin.html" class="seat-link seat-lg seat-first">
-              <div>
-                <span class="title">First Violin</span>
-                <span class="sub">Performances</span>
+            <a href="performance-first-violin.html" class="section-link seat-first" aria-label="First section page">
+              <div class="seat-grid cols-4">
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
               </div>
+              <div class="section-label">Performances</div>
             </a>
 
-            <a href="performance-viola.html" class="seat-link seat-md seat-viola">
-              <div>
-                <span class="title">Viola</span>
-                <span class="sub">Scores</span>
+            <a href="performance-viola.html" class="section-link seat-viola" aria-label="Scores page">
+              <div class="seat-grid cols-3">
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
               </div>
+              <div class="section-label">Scores</div>
             </a>
 
-            <a href="performance-cello.html" class="seat-link seat-lg seat-cello">
-              <div>
-                <span class="title">Cello</span>
-                <span class="sub">Photographs</span>
+            <a href="performance-cello.html" class="section-link seat-cello" aria-label="Photos page">
+              <div class="seat-grid cols-4">
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
+                <span class="seat"></span>
               </div>
+              <div class="section-label">Photos</div>
             </a>
 
-            <a href="performance-profile.html" class="profile-link" aria-label="Profile page">
+            <a href="performance-profile.html" class="section-link profile-link" aria-label="Profile page">
               <div class="profile-photo"></div>
               <div class="profile-text">
                 <strong>Profile</strong>
                 <span>Songpyo Hong</span>
               </div>
             </a>
+
           </div>
         </div>
-
-        <div class="panel-hint">Click each section to open the archive</div>
       </section>
     </main>
-
-    <div class="contact-line">
-      <span class="contact-label">Email</span>
-      <a href="mailto:songpyoh@gmail.com">songpyoh@gmail.com</a>
-      <span class="contact-separator"></span>
-      <span class="contact-label">Instagram</span>
-      <a href="https://instagram.com/twins03173" target="_blank" rel="noopener noreferrer">@twins03173</a>
-    </div>
   </div>
 </body>
 </html>
