@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hong Songpyo Portfolio</title>
+  <style>
+    :root {
+      --bg: #070707;
+      --bg-soft: #101010;
+      --panel: rgba(255,255,255,0.08);
+      --panel-strong: rgba(255,255,255,0.12);
+      --border: rgba(255,255,255,0.16);
+      --text: #f5f1eb;
+      --muted: #c7b9aa;
+      --accent: #ff7a1a;
+      --accent-soft: rgba(255, 122, 26, 0.18);
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --glass-blur: blur(18px);
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,122,26,0.18), transparent 25%),
+        radial-gradient(circle at 80% 25%, rgba(255,255,255,0.08), transparent 22%),
+        radial-gradient(circle at 70% 80%, rgba(255,122,26,0.12), transparent 24%),
+        linear-gradient(135deg, #050505 0%, #0d0d0d 45%, #080808 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0));
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .floating-orb {
+      position: fixed;
+      border-radius: 999px;
+      filter: blur(40px);
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+      animation: drift 14s ease-in-out infinite;
+    }
+
+    .orb-a { width: 220px; height: 220px; background: rgba(255,122,26,0.18); top: 10%; right: 6%; }
+    .orb-b { width: 180px; height: 180px; background: rgba(255,255,255,0.08); bottom: 10%; left: 8%; animation-delay: -6s; }
+
+    @keyframes drift {
+      0%, 100% { transform: translate3d(0,0,0); }
+      50% { transform: translate3d(0, -18px, 0) scale(1.04); }
+    }
+
+    .site {
+      position: relative;
+      z-index: 1;
+      width: min(var(--max), calc(100% - 40px));
+      margin: 24px auto 48px;
+    }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      box-shadow: var(--shadow);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 16px;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 18px;
+      border-radius: 22px;
+      margin-bottom: 22px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand strong { font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; }
+    .brand span { color: var(--muted); font-size: 12px; }
+
+    .nav-set {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-chip {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.28s ease;
+    }
+
+    .nav-chip:hover, .nav-chip.active {
+      border-color: rgba(255,122,26,0.5);
+      background: var(--accent-soft);
+      transform: translateY(-1px);
+    }
+
+    .view {
+      display: none;
+      animation: fadeUp 0.65s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .view.active { display: block; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px) scale(0.99); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .hero {
+      position: relative;
+      min-height: 78vh;
+      border-radius: 34px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      align-items: stretch;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(100deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.38) 40%, rgba(0,0,0,0.68) 100%),
+        url('https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=1600&q=80') center/cover;
+      transform: scale(1.04);
+    }
+
+    .hero-left, .hero-right {
+      position: relative;
+      padding: 56px;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(255,122,26,0.8);
+    }
+
+    h1 {
+      font-size: clamp(40px, 8vw, 88px);
+      line-height: 0.94;
+      margin: 0 0 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-role {
+      color: #f0d3bd;
+      font-size: clamp(16px, 2.3vw, 24px);
+      margin-bottom: 22px;
+    }
+
+    .hero-copy {
+      max-width: 640px;
+      color: rgba(255,255,255,0.86);
+      font-size: 16px;
+      line-height: 1.85;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 38px;
+    }
+
+    .btn {
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: 0.28s ease;
+      border: 1px solid transparent;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff7a1a, #ff9a4d);
+      color: #1b0d04;
+      box-shadow: 0 18px 40px rgba(255,122,26,0.26);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 720px;
+    }
+
+    .metric {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.13);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 6px;
+      color: #fff6ef;
+    }
+
+    .metric span { color: var(--muted); font-size: 13px; }
+
+    .hero-right {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+
+    .floating-card {
+      width: min(100%, 420px);
+      padding: 26px;
+      border-radius: 28px;
+      align-self: end;
+      background: rgba(10,10,10,0.34);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow);
+      transform: translateY(-10px);
+    }
+
+    .floating-card h3 { margin-top: 0; font-size: 24px; }
+    .floating-card p { color: var(--muted); line-height: 1.8; }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .mini-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .mini-item strong { color: var(--text); display: block; margin-bottom: 4px; }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .panel {
+      border-radius: 28px;
+      padding: 28px;
+    }
+
+    .panel h2 { font-size: 28px; margin-bottom: 14px; }
+    .panel p { color: var(--muted); line-height: 1.9; }
+
+    .image-panel {
+      min-height: 380px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.5)),
+        url('https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=1400&q=80') center/cover;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .feature-card {
+      padding: 22px;
+      border-radius: 24px;
+      transition: 0.28s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,122,26,0.35);
+    }
+
+    .feature-card h3 { margin: 0 0 10px; }
+    .feature-card p { margin: 0; color: var(--muted); line-height: 1.75; font-size: 14px; }
+
+    .split-hero {
+      border-radius: 32px;
+      overflow: hidden;
+      min-height: 72vh;
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      margin-top: 6px;
+    }
+
+    .split-visual {
+      min-height: 420px;
+      position: relative;
+    }
+
+    .split-visual.performance {
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
+        url('https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=1400&q=80') center/cover;
+    }
+
+    .split-visual.research {
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.58)),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80') center/cover;
+    }
+
+    .split-content {
+      padding: 42px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .split-content h1 {
+      font-size: clamp(34px, 5vw, 68px);
+      margin-bottom: 6px;
+    }
+
+    .subnav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .subnav button {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      cursor: pointer;
+      transition: 0.24s ease;
+    }
+
+    .subnav button:hover, .subnav button.active {
+      background: var(--accent-soft);
+      border-color: rgba(255,122,26,0.4);
+    }
+
+    .content-stack {
+      display: grid;
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .list-card {
+      padding: 22px;
+      border-radius: 24px;
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .list-card .badge {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffd2b4;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,122,26,0.14);
+      border: 1px solid rgba(255,122,26,0.22);
+      text-align: center;
+    }
+
+    .list-card h3 { margin: 0 0 8px; }
+    .list-card p { margin: 0; color: var(--muted); line-height: 1.8; }
+
+    .footer-contact {
+      margin-top: 26px;
+      border-radius: 28px;
+      padding: 24px 26px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-contact h3 { margin: 0 0 8px; }
+    .footer-contact p { margin: 0; color: var(--muted); }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 11px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .footer-links a:hover {
+      background: var(--accent-soft);
+      border-color: rgba(255,122,26,0.35);
+    }
+
+    .fade-caption {
+      color: rgba(255,255,255,0.62);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .section-grid,
+      .card-grid,
+      .split-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-left, .hero-right, .split-content { padding: 28px; }
+      .hero-right { justify-content: stretch; }
+      .hero { min-height: auto; }
+      .hero-metrics { grid-template-columns: 1fr; }
+      .list-card { grid-template-columns: 1fr; }
+      .topbar { top: 10px; }
+    }
+
+    @media (max-width: 640px) {
+      .site { width: min(100% - 20px, var(--max)); }
+      .topbar { padding: 12px 14px; border-radius: 18px; }
+      .nav-set { gap: 8px; }
+      .nav-chip { padding: 9px 12px; font-size: 13px; }
+      .hero-left, .hero-right, .split-content { padding: 22px; }
+      .panel, .feature-card { padding: 20px; }
+      .footer-contact { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-orb orb-a"></div>
+  <div class="floating-orb orb-b"></div>
+
+  <div class="site">
+    <header class="topbar glass">
+      <div class="brand">
+        <strong>Hong Songpyo</strong>
+        <span>Portfolio Prototype · Dark Editorial Mood</span>
+      </div>
+      <nav class="nav-set" id="mainNav"></nav>
+    </header>
+
+    <section class="view active" data-view="home">
+      <div class="hero glass">
+        <div class="hero-left">
+          <div class="eyebrow"><span class="dot"></span> Performance · Research · Portfolio</div>
+          <h1>홍송표</h1>
+          <div class="hero-role">Industrial Engineer / Clarinetist</div>
+          <p class="hero-copy">
+            연주와 연구를 분리해서 보여주되, 하나의 감각적인 아이덴티티로 묶는 포트폴리오를 지향했습니다.
+            검은색 기반 위에 주황색 포인트를 얹고, 사진과 유리 질감의 패널을 사용해 차분하지만 무드 있는 인상을 만들었습니다.
+          </p>
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary" data-go="performance">Performance</a>
+            <a href="#" class="btn btn-secondary" data-go="research">Research</a>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric glass">
+              <strong>Dual</strong>
+              <span>Performer and researcher identity</span>
+            </div>
+            <div class="metric glass">
+              <strong>Dark</strong>
+              <span>Black base with orange highlights</span>
+            </div>
+            <div class="metric glass">
+              <strong>Glass</strong>
+              <span>Transparent panels and soft motion</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="floating-card">
+            <div class="fade-caption">Creative direction</div>
+            <h3>감성 우선의 포트폴리오</h3>
+            <p>
+              가시성보다 첫인상과 분위기를 우선한 버전입니다. 추후 각 페이지에서 정보량을 늘릴 때 대비해, 레이아웃은 확장 가능한 카드 구조로 설계했습니다.
+            </p>
+            <div class="mini-list">
+              <div class="mini-item">
+                <div>
+                  <strong>Hero image</strong>
+                  Home 첫 인상을 결정하는 대형 비주얼
+                </div>
+                <div>01</div>
+              </div>
+              <div class="mini-item">
+                <div>
+                  <strong>Adaptive nav</strong>
+                  Home / Performance / Research 별 메뉴 전환
+                </div>
+                <div>02</div>
+              </div>
+              <div class="mini-item">
+                <div>
+                  <strong>Glass panels</strong>
+                  사진 위 텍스트 패널 중심 구성
+                </div>
+                <div>03</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-grid">
+        <div class="panel glass">
+          <div class="fade-caption">About</div>
+          <h2>하나의 사이트, 두 개의 프로필</h2>
+          <p>
+            Home에서는 연주자와 연구자의 두 정체성을 하나의 세계관 안에서 제시합니다. 사용자는 상단 메뉴나 버튼을 통해 각 프로필로 이동하고, 이동 후에는 해당 맥락에 맞는 서브 메뉴만 보이도록 설계했습니다.
+          </p>
+          <p>
+            구조는 단순하지만, 비주얼은 공연장 웹사이트처럼 강한 사진과 어두운 배경, 미세한 모션으로 완성도를 높이는 방향입니다.
+          </p>
+        </div>
+        <div class="panel image-panel glass"></div>
+      </div>
+
+      <div class="card-grid">
+        <article class="feature-card glass">
+          <h3>Performance Flow</h3>
+          <p>프로필, 공연 이력, 영상, 갤러리, 업데이트로 연결되는 감성 중심 구조.</p>
+        </article>
+        <article class="feature-card glass">
+          <h3>Research Flow</h3>
+          <p>프로필, 논문, 프로젝트, 작업물, 업데이트로 이어지는 아카이브형 구조.</p>
+        </article>
+        <article class="feature-card glass">
+          <h3>Motion Layer</h3>
+          <p>페이지 전환, hover, floating orb, glass blur를 통한 조용한 움직임.</p>
+        </article>
+      </div>
+
+      <div class="footer-contact glass">
+        <div>
+          <h3>Contact</h3>
+          <p>사이트 하단에 이메일과 인스타그램 링크를 배치하는 구조입니다.</p>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:you@example.com">Email</a>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" data-view="performance">
+      <div class="split-hero glass">
+        <div class="split-visual performance"></div>
+        <div class="split-content">
+          <div class="eyebrow"><span class="dot"></span> Performance Profile</div>
+          <h1>연주 프로필</h1>
+          <div class="hero-role">Clarinet Performance / Artistic Archive</div>
+          <p class="hero-copy">
+            연주자 프로필에서는 비주얼과 무드를 더 강하게 가져갑니다. 공연장 사진, 공연 포스터, 리허설 컷처럼 분위기를 만드는 이미지를 크게 활용하고,
+            그 위에 유리 패널 형태의 텍스트 블록을 배치해 감성적인 인상을 만듭니다.
+          </p>
+          <div class="subnav" id="performanceSubnav"></div>
+        </div>
+      </div>
+
+      <div class="content-stack" id="performanceContent"></div>
+    </section>
+
+    <section class="view" data-view="research">
+      <div class="split-hero glass">
+        <div class="split-visual research"></div>
+        <div class="split-content">
+          <div class="eyebrow"><span class="dot"></span> Research Profile</div>
+          <h1>연구 프로필</h1>
+          <div class="hero-role">Industrial Engineering / Projects / Papers</div>
+          <p class="hero-copy">
+            연구 프로필은 연주보다 조금 더 구조적이지만, 전체 무드는 동일하게 유지합니다. 검은 배경과 주황 포인트, 카드 기반 레이아웃, 여백을 활용해
+            정보량이 많아져도 여전히 포트폴리오다운 느낌을 유지할 수 있도록 했습니다.
+          </p>
+          <div class="subnav" id="researchSubnav"></div>
+        </div>
+      </div>
+
+      <div class="content-stack" id="researchContent"></div>
+    </section>
+  </div>
+
+  <script>
+    const mainNav = document.getElementById('mainNav');
+    const views = [...document.querySelectorAll('.view')];
+    const state = {
+      currentView: 'home',
+      performanceTab: 'profile',
+      researchTab: 'profile'
+    };
+
+    const performanceTabs = {
+      profile: {
+        label: 'Profile',
+        cards: [
+          { badge: 'Bio', title: '연주자 소개', text: '클라리넷 연주자로서의 정체성, 활동 방향, 소속, 현재 집중하고 있는 연주 영역을 소개하는 공간입니다.' },
+          { badge: 'Mood', title: '비주얼 중심 톤', text: '프로필 페이지 자체를 하나의 포스터처럼 구성해 첫 인상에서 감정을 만드는 방향으로 설계했습니다.' }
+        ]
+      },
+      performances: {
+        label: 'Performances',
+        cards: [
+          { badge: 'Archive', title: '공연 이력 카드', text: '공연명, 날짜, 장소, 역할을 카드나 리스트 형식으로 정리하는 영역입니다.' },
+          { badge: 'Poster', title: '포스터와 공연장 사진', text: '단순 목록보다 공연장의 분위기를 전달하는 사진을 섞어 감각적인 아카이브로 보이게 할 수 있습니다.' }
+        ]
+      },
+      videos: {
+        label: 'Videos',
+        cards: [
+          { badge: 'Media', title: '연주 영상 임베드', text: '유튜브 영상을 크게 배치하고, 곡명과 간단한 설명을 유리 패널 위에 얹는 구성이 잘 어울립니다.' },
+          { badge: 'Flow', title: '대표 영상 우선 노출', text: '가장 자신 있는 대표 영상 1~2개를 먼저 보여주고, 이후에 추가 영상을 내려가며 보는 구조를 추천합니다.' }
+        ]
+      },
+      gallery: {
+        label: 'Gallery',
+        cards: [
+          { badge: 'Photo', title: '사진 중심 갤러리', text: '연주 사진, 리허설 사진, 단체 사진, 악기 디테일 컷 등 무드를 강화하는 이미지를 중심으로 구성합니다.' },
+          { badge: 'Layout', title: '비정형 그리드', text: '정사각형만 쓰기보다 크기가 다른 카드 그리드를 섞으면 더 세련된 인상을 줄 수 있습니다.' }
+        ]
+      },
+      updates: {
+        label: 'Updates',
+        cards: [
+          { badge: 'Note', title: '연주 기록', text: '공연 후기, 예정 공연 소식, 연습 중 인상 깊었던 기록 등을 짧은 에디토리얼 카드 형식으로 쌓을 수 있습니다.' },
+          { badge: 'Tone', title: '감성적 문장 톤', text: '딱딱한 공지보다 짧은 캡션처럼 써도 전체 분위기와 잘 맞습니다.' }
+        ]
+      }
+    };
+
+    const researchTabs = {
+      profile: {
+        label: 'Profile',
+        cards: [
+          { badge: 'Bio', title: '연구자 소개', text: '관심 분야, 문제의식, 연구 방향을 간결하게 요약하는 시작점입니다.' },
+          { badge: 'Identity', title: '연주와 연구의 연결', text: '두 정체성이 분리되어 있으면서도 하나의 사이트 안에서 연결된 인상을 주도록 구성합니다.' }
+        ]
+      },
+      papers: {
+        label: 'Papers',
+        cards: [
+          { badge: 'Paper', title: '논문 아카이브', text: '논문 제목, 한 줄 요약, 링크, 상태를 카드 형식으로 보여주는 구성이 적합합니다.' },
+          { badge: 'System', title: '정돈된 정보 계층', text: '연도, 키워드, 상태를 부가 정보로 붙이면 구조가 더 선명해집니다.' }
+        ]
+      },
+      projects: {
+        label: 'Projects',
+        cards: [
+          { badge: 'Project', title: '프로젝트 스토리', text: '문제 정의, 역할, 과정, 산출물을 요약해 UI/UX 포트폴리오처럼 보여줄 수 있습니다.' },
+          { badge: 'Visual', title: '썸네일 중심 구조', text: '각 프로젝트마다 대표 이미지를 두고, 클릭 시 상세 내용을 보는 흐름이 잘 맞습니다.' }
+        ]
+      },
+      works: {
+        label: 'Works',
+        cards: [
+          { badge: 'Work', title: '작업물 모음', text: '영상, 시각화, 프로토타입, 인터페이스 시안 등을 자유롭게 묶는 영역입니다.' },
+          { badge: 'Blend', title: '아트 디렉션 유지', text: '연구 섹션이어도 시각적 완성도를 유지해 전체 사이트의 감성을 끊지 않도록 합니다.' }
+        ]
+      },
+      updates: {
+        label: 'Updates',
+        cards: [
+          { badge: 'Log', title: '연구 노트', text: '아이디어 메모, 프로젝트 진행 상황, 논문 작업 업데이트를 기록하는 공간입니다.' },
+          { badge: 'Rhythm', title: '느린 아카이빙', text: '짧은 문장과 날짜만으로도 충분히 분위기 있는 업데이트 페이지를 만들 수 있습니다.' }
+        ]
+      }
+    };
+
+    function renderMainNav() {
+      const isHome = state.currentView === 'home';
+      const items = isHome
+        ? [
+            ['home', 'Home'],
+            ['performance', 'Performance'],
+            ['research', 'Research']
+          ]
+        : state.currentView === 'performance'
+          ? [
+              ['home', 'Home'],
+              ['performance', 'Performance'],
+              ...Object.keys(performanceTabs).map(key => [`performance:${key}`, performanceTabs[key].label])
+            ]
+          : [
+              ['home', 'Home'],
+              ['research', 'Research'],
+              ...Object.keys(researchTabs).map(key => [`research:${key}`, researchTabs[key].label])
+            ];
+
+      mainNav.innerHTML = items.map(([value, label]) => {
+        const active =
+          value === state.currentView ||
+          value === `${state.currentView}:${state.currentView === 'performance' ? state.performanceTab : state.researchTab}`;
+        return `<button class="nav-chip ${active ? 'active' : ''}" data-nav="${value}">${label}</button>`;
+      }).join('');
+    }
+
+    function renderSubnav(targetId, tabs, selected, namespace) {
+      const container = document.getElementById(targetId);
+      container.innerHTML = Object.entries(tabs).map(([key, info]) => `
+        <button class="${selected === key ? 'active' : ''}" data-subnav="${namespace}:${key}">${info.label}</button>
+      `).join('');
+    }
+
+    function renderContent(targetId, tabs, selected) {
+      const container = document.getElementById(targetId);
+      const selectedData = tabs[selected];
+      container.innerHTML = selectedData.cards.map(card => `
+        <article class="list-card glass">
+          <div class="badge">${card.badge}</div>
+          <div>
+            <h3>${card.title}</h3>
+            <p>${card.text}</p>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function showView(view) {
+      state.currentView = view;
+      views.forEach(v => v.classList.toggle('active', v.dataset.view === view));
+      renderMainNav();
+      renderSubnav('performanceSubnav', performanceTabs, state.performanceTab, 'performance');
+      renderSubnav('researchSubnav', researchTabs, state.researchTab, 'research');
+      renderContent('performanceContent', performanceTabs, state.performanceTab);
+      renderContent('researchContent', researchTabs, state.researchTab);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.addEventListener('click', (e) => {
+      const nav = e.target.closest('[data-nav]');
+      const go = e.target.closest('[data-go]');
+      const subnav = e.target.closest('[data-subnav]');
+
+      if (go) {
+        e.preventDefault();
+        showView(go.dataset.go);
+        return;
+      }
+
+      if (nav) {
+        const value = nav.dataset.nav;
+        if (value.includes(':')) {
+          const [namespace, tab] = value.split(':');
+          if (namespace === 'performance') {
+            state.performanceTab = tab;
+            showView('performance');
+          } else {
+            state.researchTab = tab;
+            showView('research');
+          }
+        } else {
+          showView(value);
+        }
+        return;
+      }
+
+      if (subnav) {
+        const [namespace, tab] = subnav.dataset.subnav.split(':');
+        if (namespace === 'performance') {
+          state.performanceTab = tab;
+          showView('performance');
+        } else {
+          state.researchTab = tab;
+          showView('research');
+        }
+      }
+    });
+
+    renderMainNav();
+    renderSubnav('performanceSubnav', performanceTabs, state.performanceTab, 'performance');
+    renderSubnav('researchSubnav', researchTabs, state.researchTab, 'research');
+    renderContent('performanceContent', performanceTabs, state.performanceTab);
+    renderContent('researchContent', researchTabs, state.researchTab);
+  </script>
+</body>
+</html>
