@@ -29,3 +29,34 @@ if (slides.length > 0) {
     slides[current].classList.add("active");
   }, 5000);
 }
+
+
+const tocLinks = document.querySelectorAll(".research-toc a");
+const researchSections = document.querySelectorAll(".research-section[id]");
+
+if (tocLinks.length && researchSections.length) {
+  const activateTocLink = (id) => {
+    tocLinks.forEach((link) => {
+      link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+    });
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visibleSections = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (visibleSections.length > 0) {
+        activateTocLink(visibleSections[0].target.id);
+      }
+    },
+    {
+      root: null,
+      rootMargin: "-35% 0px -35% 0px",
+      threshold: [0.2, 0.35, 0.5, 0.65]
+    }
+  );
+
+  researchSections.forEach((section) => observer.observe(section));
+}
