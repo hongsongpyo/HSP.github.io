@@ -559,6 +559,13 @@ h1, h2, h3 {
 
 
 
+
+
+
+
+
+
+
 /* performance transition */
 .performance-transition {
   position: fixed;
@@ -566,6 +573,11 @@ h1, h2, h3 {
   z-index: 999;
   pointer-events: none;
   overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.35s ease,
+    visibility 0s linear 0.35s;
 }
 
 .transition-blackout {
@@ -769,6 +781,15 @@ body.performance-transition-active {
   overflow: hidden;
 }
 
+body.performance-transition-active .performance-transition {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition:
+    opacity 0.35s ease,
+    visibility 0s linear 0s;
+}
+
 body.performance-transition-active .transition-blackout {
   opacity: 0.88;
 }
@@ -812,10 +833,7 @@ body.performance-transition-active .site-header {
 
   .cluster-concert,
   .cluster-photo,
-  .cluster-sheet {
-    gap: 7px;
-  }
-
+  .cluster-sheet,
   .cluster-youtube,
   .cluster-hidden {
     gap: 7px;
