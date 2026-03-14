@@ -679,9 +679,9 @@ h1, h2, h3 {
 }
 
 .research-title-card {
-  width: min(980px, 100%);
-  min-height: 520px;
-  padding: 34px 52px 40px;
+  width: min(1120px, 100%);
+  min-height: 430px;
+  padding: 34px 56px 36px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -699,20 +699,34 @@ h1, h2, h3 {
 .research-title {
   margin: 0;
   font-family: "Playfair Display", serif;
-  font-size: clamp(3rem, 5.1vw, 5.3rem);
-  line-height: 1.03;
+  font-size: clamp(3.1rem, 5vw, 5.4rem);
+  line-height: 1.02;
   color: #f0dfcf;
   letter-spacing: -0.03em;
-  max-width: 11ch;
+  max-width: none;
 }
 
 /* titles */
 .research-section-title {
-  margin: 0 0 18px;
+  position: relative;
+  display: inline-block;
+  margin: 0 0 26px;
+  padding-bottom: 12px;
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 800;
   line-height: 1.08;
   color: #f5f1eb;
+}
+
+.research-section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 72px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--accent);
 }
 
 .research-title-accent {
@@ -735,6 +749,10 @@ h1, h2, h3 {
   grid-template-columns: 320px minmax(0, 1fr);
   gap: 34px;
   align-items: center;
+}
+
+.research-profile-image-wrap {
+  width: 100%;
 }
 
 .research-profile-image {
@@ -802,7 +820,7 @@ h1, h2, h3 {
 }
 
 .abstract-header {
-  margin-bottom: 26px;
+  margin-bottom: 18px;
 }
 
 .abstract-summary {
@@ -818,7 +836,7 @@ h1, h2, h3 {
   display: grid;
   grid-template-columns: 64px 1fr;
   gap: 18px;
-  padding: 22px 0;
+  padding: 18px 0;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -834,8 +852,8 @@ h1, h2, h3 {
 
 .abstract-copy h3 {
   margin: 0 0 8px;
-  font-size: 1.2rem;
-  color: var(--accent);
+  font-size: 1.15rem;
+  color: #f5f1eb;
 }
 
 .abstract-copy p {
@@ -857,10 +875,7 @@ h1, h2, h3 {
 }
 
 .study-slider-head {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 20px;
+  display: block;
   margin-bottom: 18px;
 }
 
@@ -871,29 +886,11 @@ h1, h2, h3 {
   font-size: 0.92rem;
 }
 
-.slider-controls {
-  display: flex;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.slider-btn {
-  width: 46px;
-  height: 46px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.04);
-  color: var(--accent);
-  font-size: 1.5rem;
-  line-height: 1;
-  cursor: pointer;
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-}
-
-.slider-btn:hover {
-  transform: translateY(-1px);
-  border-color: rgba(255, 122, 26, 0.36);
-  background: rgba(255, 122, 26, 0.08);
+.study-slider-shell {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) 54px;
+  gap: 14px;
+  align-items: center;
 }
 
 .study-slider-window {
@@ -912,6 +909,29 @@ h1, h2, h3 {
 
 .study-slider-track::-webkit-scrollbar {
   display: none;
+}
+
+.slider-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  color: var(--accent);
+  font-size: 1.65rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.slider-btn:hover {
+  transform: scale(1.04);
+  border-color: rgba(255, 122, 26, 0.36);
+  background: rgba(255, 122, 26, 0.08);
+}
+
+.slider-btn-side {
+  align-self: center;
 }
 
 .study-card {
@@ -1169,7 +1189,7 @@ h1, h2, h3 {
   }
 
   .research-title-card {
-    width: min(900px, 100%);
+    width: min(1000px, 100%);
   }
 }
 
@@ -1200,11 +1220,11 @@ h1, h2, h3 {
   }
 
   .research-title-card {
-    min-height: 420px;
+    min-height: 360px;
   }
 
   .research-title {
-    font-size: clamp(2.3rem, 9vw, 3.6rem);
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
     max-width: 100%;
   }
 
@@ -1213,13 +1233,19 @@ h1, h2, h3 {
     gap: 24px;
   }
 
-  .study-slider-head {
-    flex-direction: column;
-    align-items: flex-start;
+  .study-slider-shell {
+    grid-template-columns: 42px minmax(0, 1fr) 42px;
+    gap: 10px;
+  }
+
+  .slider-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 1.3rem;
   }
 
   .study-slider-track {
-    grid-auto-columns: 88%;
+    grid-auto-columns: 100%;
   }
 
   .study-card-image {

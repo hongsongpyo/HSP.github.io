@@ -69,7 +69,7 @@
             </div>
 
             <div class="research-profile-copy">
-              <h2 class="research-section-title research-title-accent">Author</h2>
+              <h2 class="research-section-title">Author</h2>
               <h3 class="author-name">Songpyo Hong</h3>
               <p class="author-role">Industrial & Data Engineer</p>
 
@@ -92,7 +92,7 @@
       <div class="container research-shell">
         <div class="glass-panel research-abstract-block reveal">
           <div class="abstract-header">
-            <h2 class="research-section-title research-title-accent">Abstract</h2>
+            <h2 class="research-section-title">Abstract</h2>
             <p class="section-body abstract-summary">
               UI/UX, 창업적 사고, 데이터 기반 분석을 중심으로 인간과 시스템의 상호작용을 탐구해 온 관심사와
               연구 흐름을 정리한 아카이브입니다. 아래 섹션들은 연구의 배경, 선행연구, 실험, 결과물,
@@ -152,7 +152,7 @@
 
       <div class="container research-shell">
         <div class="glass-panel research-content-block reveal">
-          <h2 class="research-section-title research-title-accent">1. Introduction</h2>
+          <h2 class="research-section-title">1. Introduction</h2>
           <p class="section-body">
             제가 UI/UX에 관심을 가지게 된 계기는 사람들이 화면 위의 정보 구조를 어떻게 받아들이고,
             어떤 인터페이스가 더 직관적이고 설득력 있게 작동하는지에 대한 궁금증에서 시작되었습니다.
@@ -176,7 +176,7 @@
       <div class="container research-shell">
         <div class="glass-panel research-long-block reveal">
           <div class="research-section-head">
-            <h2 class="research-section-title research-title-accent">2. Prior Study</h2>
+            <h2 class="research-section-title">2. Prior Study</h2>
             <p class="section-body">
               현재 관심을 두고 있는 연구 주제를 형성한 논문, 프로젝트, 문제의식들을 정리한 섹션입니다.
               각 하위 주제는 카드형 아카이브로 구성되어 있으며, 좌우 이동으로 탐색할 수 있습니다.
@@ -190,46 +190,48 @@
                 <h3 class="study-subtitle research-title-accent">2-1. Papers</h3>
                 <p>UI/UX, VR, 검색 인터페이스, 인간 중심 평가와 관련된 핵심 선행연구</p>
               </div>
-              <div class="slider-controls">
-                <button class="slider-btn" type="button" data-target="papers-track" data-direction="-1" aria-label="Previous papers">‹</button>
-                <button class="slider-btn" type="button" data-target="papers-track" data-direction="1" aria-label="Next papers">›</button>
-              </div>
             </div>
 
-            <div class="study-slider-window">
-              <div class="study-slider-track" id="papers-track">
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-1"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Paper</p>
-                    <h4>Cybersickness, Presence, and Usability in VR</h4>
-                  </div>
-                </article>
+            <div class="study-slider-shell">
+              <button class="slider-btn slider-btn-side" type="button" data-target="papers-track" data-direction="-1" aria-label="Previous papers">‹</button>
 
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-2"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Paper</p>
-                    <h4>Visual Attention in Search Result Interfaces</h4>
-                  </div>
-                </article>
+              <div class="study-slider-window">
+                <div class="study-slider-track" id="papers-track">
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-1"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Paper</p>
+                      <h4>Cybersickness, Presence, and Usability in VR</h4>
+                    </div>
+                  </article>
 
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-3"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Paper</p>
-                    <h4>Human-Centered Evaluation Frameworks</h4>
-                  </div>
-                </article>
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-2"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Paper</p>
+                      <h4>Visual Attention in Search Result Interfaces</h4>
+                    </div>
+                  </article>
 
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-4"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Paper</p>
-                    <h4>Inclusive Interaction in Immersive Systems</h4>
-                  </div>
-                </article>
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-3"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Paper</p>
+                      <h4>Human-Centered Evaluation Frameworks</h4>
+                    </div>
+                  </article>
+
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-4"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Paper</p>
+                      <h4>Inclusive Interaction in Immersive Systems</h4>
+                    </div>
+                  </article>
+                </div>
               </div>
+
+              <button class="slider-btn slider-btn-side" type="button" data-target="papers-track" data-direction="1" aria-label="Next papers">›</button>
             </div>
           </div>
 
@@ -240,46 +242,48 @@
                 <h3 class="study-subtitle research-title-accent">2-2. Projects</h3>
                 <p>직접 진행했거나 연결해서 확장 중인 연구 및 프로젝트 흐름</p>
               </div>
-              <div class="slider-controls">
-                <button class="slider-btn" type="button" data-target="projects-track" data-direction="-1" aria-label="Previous projects">‹</button>
-                <button class="slider-btn" type="button" data-target="projects-track" data-direction="1" aria-label="Next projects">›</button>
-              </div>
             </div>
 
-            <div class="study-slider-window">
-              <div class="study-slider-track" id="projects-track">
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-5"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Project</p>
-                    <h4>VR Cybersickness and Presence Study</h4>
-                  </div>
-                </article>
+            <div class="study-slider-shell">
+              <button class="slider-btn slider-btn-side" type="button" data-target="projects-track" data-direction="-1" aria-label="Previous projects">‹</button>
 
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-6"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Project</p>
-                    <h4>Search UI / Visual Attention Research</h4>
-                  </div>
-                </article>
+              <div class="study-slider-window">
+                <div class="study-slider-track" id="projects-track">
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-5"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Project</p>
+                      <h4>VR Cybersickness and Presence Study</h4>
+                    </div>
+                  </article>
 
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-7"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Project</p>
-                    <h4>Data-Driven UX Analysis</h4>
-                  </div>
-                </article>
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-6"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Project</p>
+                      <h4>Search UI / Visual Attention Research</h4>
+                    </div>
+                  </article>
 
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-8"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Project</p>
-                    <h4>Interface Evaluation and Research Design</h4>
-                  </div>
-                </article>
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-7"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Project</p>
+                      <h4>Data-Driven UX Analysis</h4>
+                    </div>
+                  </article>
+
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-8"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Project</p>
+                      <h4>Interface Evaluation and Research Design</h4>
+                    </div>
+                  </article>
+                </div>
               </div>
+
+              <button class="slider-btn slider-btn-side" type="button" data-target="projects-track" data-direction="1" aria-label="Next projects">›</button>
             </div>
           </div>
 
@@ -290,46 +294,48 @@
                 <h3 class="study-subtitle research-title-accent">2-3. Limitations</h3>
                 <p>기존 연구에서 충분히 다루어지지 않았던 공백과 내가 주목하는 한계</p>
               </div>
-              <div class="slider-controls">
-                <button class="slider-btn" type="button" data-target="limits-track" data-direction="-1" aria-label="Previous limitations">‹</button>
-                <button class="slider-btn" type="button" data-target="limits-track" data-direction="1" aria-label="Next limitations">›</button>
-              </div>
             </div>
 
-            <div class="study-slider-window">
-              <div class="study-slider-track" id="limits-track">
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-9"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Limitation</p>
-                    <h4>Fragmented Evaluation Metrics</h4>
-                  </div>
-                </article>
+            <div class="study-slider-shell">
+              <button class="slider-btn slider-btn-side" type="button" data-target="limits-track" data-direction="-1" aria-label="Previous limitations">‹</button>
 
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-10"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Limitation</p>
-                    <h4>Lack of Accessibility Perspective</h4>
-                  </div>
-                </article>
+              <div class="study-slider-window">
+                <div class="study-slider-track" id="limits-track">
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-9"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Limitation</p>
+                      <h4>Fragmented Evaluation Metrics</h4>
+                    </div>
+                  </article>
 
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-11"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Limitation</p>
-                    <h4>Limited View on User Diversity</h4>
-                  </div>
-                </article>
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-10"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Limitation</p>
+                      <h4>Lack of Accessibility Perspective</h4>
+                    </div>
+                  </article>
 
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-12"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Limitation</p>
-                    <h4>Insufficient Adaptive Interaction Design</h4>
-                  </div>
-                </article>
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-11"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Limitation</p>
+                      <h4>Limited View on User Diversity</h4>
+                    </div>
+                  </article>
+
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-12"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Limitation</p>
+                      <h4>Insufficient Adaptive Interaction Design</h4>
+                    </div>
+                  </article>
+                </div>
               </div>
+
+              <button class="slider-btn slider-btn-side" type="button" data-target="limits-track" data-direction="1" aria-label="Next limitations">›</button>
             </div>
           </div>
         </div>
@@ -344,7 +350,7 @@
       <div class="container research-shell">
         <div class="glass-panel research-long-block reveal">
           <div class="research-section-head">
-            <h2 class="research-section-title research-title-accent">3. Experiment</h2>
+            <h2 class="research-section-title">3. Experiment</h2>
             <p class="section-body">
               현재 진행 중인 연구 주제를 카드 아카이브 형태로 정리했습니다.
             </p>
@@ -356,46 +362,48 @@
                 <h3 class="study-subtitle research-title-accent">Ongoing Studies</h3>
                 <p>VR, 검색 UI, 포용적 상호작용과 관련한 현재 연구</p>
               </div>
-              <div class="slider-controls">
-                <button class="slider-btn" type="button" data-target="experiment-track" data-direction="-1" aria-label="Previous experiments">‹</button>
-                <button class="slider-btn" type="button" data-target="experiment-track" data-direction="1" aria-label="Next experiments">›</button>
-              </div>
             </div>
 
-            <div class="study-slider-window">
-              <div class="study-slider-track" id="experiment-track">
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-13"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Experiment</p>
-                    <h4>VR Cybersickness and Presence Study</h4>
-                  </div>
-                </article>
+            <div class="study-slider-shell">
+              <button class="slider-btn slider-btn-side" type="button" data-target="experiment-track" data-direction="-1" aria-label="Previous experiments">‹</button>
 
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-14"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Experiment</p>
-                    <h4>Search UI / Visual Attention Research</h4>
-                  </div>
-                </article>
+              <div class="study-slider-window">
+                <div class="study-slider-track" id="experiment-track">
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-13"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Experiment</p>
+                      <h4>VR Cybersickness and Presence Study</h4>
+                    </div>
+                  </article>
 
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-15"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Experiment</p>
-                    <h4>Inclusive Interaction in Immersive Systems</h4>
-                  </div>
-                </article>
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-14"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Experiment</p>
+                      <h4>Search UI / Visual Attention Research</h4>
+                    </div>
+                  </article>
 
-                <article class="study-card">
-                  <div class="study-card-image study-card-image-16"></div>
-                  <div class="study-card-copy">
-                    <p class="card-label">Experiment</p>
-                    <h4>Adaptive UX Evaluation Framework</h4>
-                  </div>
-                </article>
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-15"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Experiment</p>
+                      <h4>Inclusive Interaction in Immersive Systems</h4>
+                    </div>
+                  </article>
+
+                  <article class="study-card">
+                    <div class="study-card-image study-card-image-16"></div>
+                    <div class="study-card-copy">
+                      <p class="card-label">Experiment</p>
+                      <h4>Adaptive UX Evaluation Framework</h4>
+                    </div>
+                  </article>
+                </div>
               </div>
+
+              <button class="slider-btn slider-btn-side" type="button" data-target="experiment-track" data-direction="1" aria-label="Next experiments">›</button>
             </div>
           </div>
         </div>
@@ -409,7 +417,7 @@
 
       <div class="container research-shell">
         <div class="research-section-head reveal">
-          <h2 class="research-section-title research-title-accent">4. Results</h2>
+          <h2 class="research-section-title">4. Results</h2>
         </div>
 
         <div class="results-photo-grid">
@@ -430,7 +438,7 @@
 
       <div class="container research-shell">
         <div class="glass-panel research-content-block reveal">
-          <h2 class="research-section-title research-title-accent">5. Future Work</h2>
+          <h2 class="research-section-title">5. Future Work</h2>
           <p class="section-body">
             앞으로는 VR 환경에서의 포용적 인터페이스 설계, 사용자 다양성을 고려한 적응형 UX,
             그리고 데이터 기반 사용자 경험 평가 프레임워크를 더 확장하고 싶습니다.
