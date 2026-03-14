@@ -4,100 +4,318 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research | Songpyo Hong</title>
-  <meta name="description" content="Research profile of Songpyo Hong" />
+  <meta name="description" content="Research archive of Songpyo Hong" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="sub-page research-page">
+<body class="research-page">
   <div class="noise"></div>
 
   <header class="site-header solid">
     <a class="brand" href="index.html">
       <span class="brand-main">Songpyo Hong</span>
-      <span class="brand-sub">Research</span>
+      <span class="brand-sub">Portfolio</span>
     </a>
 
     <nav class="top-nav">
-      <a href="index.html">HOME</a>
-      <a href="#overview">Overview</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="performance.html">Performance</a>
+      <a href="research.html">Research</a>
     </nav>
   </header>
 
-  <main>
-    <section class="sub-hero research-hero">
-      <div class="hero-bg"></div>
-      <div class="hero-overlay"></div>
+  <aside class="research-toc" aria-label="Research page navigation">
+    <a href="#abstract">Abstract</a>
+    <a href="#introduction">Introduction</a>
+    <a href="#prior-study">Prior Study</a>
+    <a href="#experiment">Experiment</a>
+    <a href="#results">Results</a>
+    <a href="#future-work">Future Work</a>
+  </aside>
 
-      <div class="container sub-hero-content reveal">
-        <div class="glass-panel wide">
-          <p class="eyebrow">Research Profile</p>
-          <h1>Industrial Engineering & UX Research</h1>
-          <p class="sub-copy">
-            산업공학, UI/UX, 데이터 분석과 시각화를 바탕으로
-            사람과 시스템의 상호작용을 연구합니다.
+  <main class="research-main">
+    <!-- Title + Author -->
+    <section class="research-section research-hero-section" id="top">
+      <div class="research-bg research-bg-title"></div>
+      <div class="research-overlay"></div>
+
+      <div class="container research-shell">
+        <div class="research-intro-grid">
+          <div class="glass-panel research-title-card reveal show">
+            <p class="research-kicker">Research Archive</p>
+            <h1 class="research-title">Exploring Human–System Interaction through UI/UX, VR, and Data Analysis</h1>
+            <p class="research-summary">
+              사용자 경험, 몰입형 환경, 데이터 기반 해석을 중심으로
+              인간과 시스템의 상호작용을 탐구하는 연구 아카이브입니다.
+            </p>
+          </div>
+
+          <div class="glass-panel research-author-card reveal show">
+            <p class="card-label">Author</p>
+            <h2>Songpyo Hong</h2>
+            <p class="author-role">Industrial & Data Engineer</p>
+            <div class="author-meta">
+              <p><span>Interest</span> UI/UX, VR Interaction, Human-Centered Data Analysis</p>
+              <p><span>Focus</span> Human–System Interaction / Interface Evaluation / Research Design</p>
+              <p><span>Approach</span> Engineering thinking with design sensitivity</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Abstract -->
+    <section class="research-section" id="abstract">
+      <div class="research-bg research-bg-dark"></div>
+      <div class="research-overlay soft"></div>
+
+      <div class="container research-shell">
+        <div class="glass-panel research-content-block reveal">
+          <p class="section-number">Abstract</p>
+          <h2>Page Overview</h2>
+          <p class="section-body">
+            이 페이지는 제가 UI/UX와 인간-시스템 상호작용에 관심을 가지게 된 배경부터,
+            관련 선행연구와 프로젝트, 현재 진행 중인 실험, 그리고 결과물 아카이브까지를
+            논문 흐름에 맞춰 정리한 연구 페이지입니다.
+          </p>
+
+          <div class="abstract-contents">
+            <div class="abstract-item">
+              <span>01</span>
+              <div>
+                <strong>Introduction</strong>
+                <p>UI/UX에 관심을 갖게 된 배경과 연구 방향</p>
+              </div>
+            </div>
+
+            <div class="abstract-item">
+              <span>02</span>
+              <div>
+                <strong>Prior Study</strong>
+                <p>관련 논문, 프로젝트, 기존 접근의 한계</p>
+              </div>
+            </div>
+
+            <div class="abstract-item">
+              <span>03</span>
+              <div>
+                <strong>Experiment</strong>
+                <p>현재 진행 중인 연구 및 실험 기록</p>
+              </div>
+            </div>
+
+            <div class="abstract-item">
+              <span>04</span>
+              <div>
+                <strong>Results</strong>
+                <p>연구 결과물, 인터페이스, 사진 및 아카이브</p>
+              </div>
+            </div>
+
+            <div class="abstract-item">
+              <span>05</span>
+              <div>
+                <strong>Future Work</strong>
+                <p>앞으로 확장하고 싶은 연구 주제와 방향성</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="research-section" id="introduction">
+      <div class="research-bg research-bg-introduction"></div>
+      <div class="research-overlay"></div>
+
+      <div class="container research-shell">
+        <div class="glass-panel research-content-block reveal">
+          <p class="section-number">1. Introduction</p>
+          <h2>How I Became Interested in UI/UX</h2>
+          <p class="section-body">
+            제가 UI/UX에 관심을 가지게 된 계기는 사람들이 화면 위의 정보 구조를 어떻게 받아들이고,
+            어떤 인터페이스가 더 직관적이고 설득력 있게 작동하는지에 대한 궁금증에서 시작되었습니다.
+            산업공학과 데이터 분석을 공부하며, 단순히 기능이 많은 시스템보다
+            사용자가 더 쉽게 이해하고 판단할 수 있는 시스템 설계가 중요하다는 점에 흥미를 느꼈습니다.
+          </p>
+          <p class="section-body">
+            이후 VR, 검색 UI, 데이터 시각화와 같은 주제를 접하면서
+            인터페이스 설계가 사용자의 몰입, 인지 부담, 의사결정 방식에 어떤 영향을 주는지에
+            더 큰 관심을 갖게 되었고, 이를 연구와 프로젝트로 확장하고 있습니다.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="overview" class="content-section container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Overview</p>
-        <h2>연구 방향</h2>
-      </div>
+    <!-- Prior Study -->
+    <section class="research-section" id="prior-study">
+      <div class="research-bg research-bg-prior"></div>
+      <div class="research-overlay"></div>
 
-      <div class="grid-two">
-        <div class="glass-panel reveal">
-          <p>
-            사용자의 경험을 데이터와 시스템 관점에서 해석하는 연구에 관심이 있습니다.
-            VR/UX, 인간공학, 시각적 인터페이스, 데이터 기반 의사결정과 같은 주제를 중심으로
-            논문과 프로젝트를 축적해 나가고 있습니다.
-          </p>
+      <div class="container research-shell">
+        <div class="research-section-head reveal">
+          <p class="section-number">2. Prior Study</p>
+          <h2>Related Knowledge and Previous Works</h2>
         </div>
-        <div class="image-block reveal research-detail-image"></div>
+
+        <div class="research-subgrid">
+          <article class="glass-panel research-subcard reveal">
+            <p class="card-label">Papers</p>
+            <h3>Literature Review</h3>
+            <p>
+              VR cybersickness, presence, usability, workload, search interface behavior,
+              eye-tracking, and human-centered evaluation methods를 중심으로 논문을 정리합니다.
+            </p>
+          </article>
+
+          <article class="glass-panel research-subcard reveal">
+            <p class="card-label">Projects</p>
+            <h3>Related Projects</h3>
+            <p>
+              인터페이스 평가, 데이터 기반 사용자 경험 분석, VR 환경에서의 상호작용 설계 등
+              기존 프로젝트와 연구 경험을 정리합니다.
+            </p>
+          </article>
+
+          <article class="glass-panel research-subcard reveal">
+            <p class="card-label">Limitations</p>
+            <h3>Research Gaps</h3>
+            <p>
+              기존 연구들이 성별, 경험 수준, 사용성, 워크로드를 통합적으로 보지 못한 부분이나,
+              장애인 접근성·적응 메커니즘을 충분히 다루지 못한 한계에 주목합니다.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="projects" class="content-section container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Projects</p>
-        <h2>작업물과 연구 기록</h2>
+    <!-- Experiment -->
+    <section class="research-section" id="experiment">
+      <div class="research-bg research-bg-experiment"></div>
+      <div class="research-overlay"></div>
+
+      <div class="container research-shell">
+        <div class="glass-panel research-content-block reveal">
+          <p class="section-number">3. Experiment</p>
+          <h2>Ongoing Research</h2>
+
+          <div class="experiment-list">
+            <div class="experiment-item">
+              <span class="experiment-index">01</span>
+              <div>
+                <h3>VR Cybersickness and Presence Study</h3>
+                <p>
+                  VR 경험 수준과 사용자 특성이 사이버멀미와 존재감, 사용성, 워크로드에
+                  어떤 차이를 만드는지 분석하는 연구입니다.
+                </p>
+              </div>
+            </div>
+
+            <div class="experiment-item">
+              <span class="experiment-index">02</span>
+              <div>
+                <h3>Search UI / Visual Attention Research</h3>
+                <p>
+                  검색 결과 페이지에서 사용자의 시각적 주의와 정보 해석 구조를 탐구하며,
+                  화면 구성 요소가 판단에 미치는 영향을 연구합니다.
+                </p>
+              </div>
+            </div>
+
+            <div class="experiment-item">
+              <span class="experiment-index">03</span>
+              <div>
+                <h3>Inclusive Interaction in Immersive Systems</h3>
+                <p>
+                  장애인 접근성, 신체적 다양성, 적응형 상호작용을 고려한
+                  포용적 인터페이스 및 몰입형 시스템 연구로 확장하고 있습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="archive-grid">
-        <article class="glass-panel reveal">
-          <p class="card-label">Paper</p>
-          <h3>논문 작업</h3>
-          <p>작성 중인 논문, 수정 기록, 핵심 기여 정리</p>
-        </article>
+    <!-- Results -->
+    <section class="research-section" id="results">
+      <div class="research-bg research-bg-results"></div>
+      <div class="research-overlay"></div>
 
-        <article class="glass-panel reveal">
-          <p class="card-label">Project</p>
-          <h3>프로젝트</h3>
-          <p>UI/UX, 데이터 시각화, 실험 설계 기반 프로젝트 아카이브</p>
-        </article>
+      <div class="container research-shell">
+        <div class="research-section-head reveal">
+          <p class="section-number">4. Results</p>
+          <h2>Archive of Outputs</h2>
+        </div>
 
-        <article class="glass-panel reveal">
-          <p class="card-label">Notes</p>
-          <h3>연구 기록</h3>
-          <p>아이디어 메모, 설계 흐름, 참고 자료 정리</p>
-        </article>
+        <div class="results-grid">
+          <article class="glass-panel result-card reveal">
+            <div class="result-image result-image-1"></div>
+            <div class="result-copy">
+              <p class="card-label">Archive</p>
+              <h3>Experiment Setup</h3>
+              <p>실험 환경, 장비 구성, 인터페이스 셋업 사진을 정리하는 영역입니다.</p>
+            </div>
+          </article>
+
+          <article class="glass-panel result-card reveal">
+            <div class="result-image result-image-2"></div>
+            <div class="result-copy">
+              <p class="card-label">Archive</p>
+              <h3>Prototype / Interface</h3>
+              <p>프로토타입 화면, 설계 스케치, UI 결과물을 모아두는 영역입니다.</p>
+            </div>
+          </article>
+
+          <article class="glass-panel result-card reveal">
+            <div class="result-image result-image-3"></div>
+            <div class="result-copy">
+              <p class="card-label">Archive</p>
+              <h3>Visual Results</h3>
+              <p>분석 그래프, 시각화 결과, 연구 요약 이미지를 기록하는 영역입니다.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Future Work -->
+    <section class="research-section" id="future-work">
+      <div class="research-bg research-bg-future"></div>
+      <div class="research-overlay soft"></div>
+
+      <div class="container research-shell">
+        <div class="glass-panel research-content-block reveal">
+          <p class="section-number">5. Future Work</p>
+          <h2>Where This Research Can Grow</h2>
+          <p class="section-body">
+            앞으로는 VR 환경에서의 포용적 인터페이스 설계, 사용자 다양성을 고려한 적응형 UX,
+            그리고 데이터 기반 사용자 경험 평가 프레임워크를 더 확장하고 싶습니다.
+            특히 접근성과 인간 중심 설계를 함께 고려하는 연구 방향에 지속적으로 관심을 가지고 있습니다.
+          </p>
+
+          <div class="future-tags">
+            <span>Inclusive UX</span>
+            <span>Human–AI Interaction</span>
+            <span>Immersive Systems</span>
+            <span>Data-driven Evaluation</span>
+            <span>Accessibility Research</span>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer id="contact" class="site-footer container">
-    <div class="footer-left">
-      <p class="footer-title">Research Contact</p>
-      <p><a href="mailto:your@email.com">your@email.com</a></p>
-      <p><a href="https://instagram.com/your_instagram" target="_blank" rel="noopener noreferrer">@your_instagram</a></p>
+  <footer class="site-footer container">
+    <div>
+      <p class="footer-title">Songpyo Hong</p>
+      <p>Research archive on UI/UX, VR, and human-system interaction.</p>
     </div>
-    <div class="footer-right">
-      <p><a href="performance.html">Go to Performance</a></p>
+    <div>
+      <p><a href="mailto:songpyoh@gmail.com">songpyoh@gmail.com</a></p>
+      <p><a href="https://instagram.com/twins03173" target="_blank" rel="noopener noreferrer">@twins03173</a></p>
     </div>
   </footer>
 
