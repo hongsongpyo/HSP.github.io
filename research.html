@@ -26,6 +26,9 @@
   </header>
 
   <aside class="research-toc" aria-label="Research page navigation">
+    <a href="#top">Title</a>
+    <a href="#author">Author</a>
+    <a href="#profile">Profile</a>
     <a href="#abstract">Abstract</a>
     <a href="#introduction">Introduction</a>
     <a href="#prior-study">Prior Study</a>
@@ -35,30 +38,68 @@
   </aside>
 
   <main class="research-main">
-    <!-- Title + Author -->
+    <!-- Title Only -->
     <section class="research-section research-hero-section" id="top">
       <div class="research-bg research-bg-title"></div>
       <div class="research-overlay"></div>
 
       <div class="container research-shell">
-        <div class="research-intro-grid">
+        <div class="research-hero-only">
           <div class="glass-panel research-title-card reveal show">
             <p class="research-kicker">Research Archive</p>
-            <h1 class="research-title">Exploring Human–System Interaction through UI/UX, VR, and Data Analysis</h1>
-            <p class="research-summary">
-              사용자 경험, 몰입형 환경, 데이터 기반 해석을 중심으로
-              인간과 시스템의 상호작용을 탐구하는 연구 아카이브입니다.
-            </p>
+            <h1 class="research-title">
+              Exploring UI/UX, Entrepreneurship, and Data-Driven Analysis
+            </h1>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="glass-panel research-author-card reveal show">
-            <p class="card-label">Author</p>
-            <h2>Songpyo Hong</h2>
-            <p class="author-role">Industrial & Data Engineer</p>
-            <div class="author-meta">
-              <p><span>Interest</span> UI/UX, VR Interaction, Human-Centered Data Analysis</p>
-              <p><span>Focus</span> Human–System Interaction / Interface Evaluation / Research Design</p>
-              <p><span>Approach</span> Engineering thinking with design sensitivity</p>
+    <!-- Author -->
+    <section class="research-section" id="author">
+      <div class="research-bg research-bg-dark"></div>
+      <div class="research-overlay soft"></div>
+
+      <div class="container research-shell">
+        <div class="glass-panel research-content-block research-author-block reveal">
+          <p class="card-label">Author</p>
+          <h2 class="research-section-title">Songpyo Hong</h2>
+          <p class="author-role">Industrial & Data Engineer</p>
+
+          <div class="author-meta">
+            <p><span>Interest</span> UI/UX, Entrepreneurship, Data Analysis, Human-Centered Design</p>
+            <p><span>Focus</span> Interface Evaluation / User Experience / Research Design / Service Thinking</p>
+            <p><span>Approach</span> Engineering thinking with design sensitivity</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile -->
+    <section class="research-section" id="profile">
+      <div class="research-bg research-bg-introduction"></div>
+      <div class="research-overlay"></div>
+
+      <div class="container research-shell">
+        <div class="glass-panel research-profile-block reveal">
+          <div class="research-profile-grid">
+            <div class="research-profile-image-wrap">
+              <div class="research-profile-image"></div>
+            </div>
+
+            <div class="research-profile-copy">
+              <h2 class="research-section-title">Research Profile</h2>
+              <p class="section-body">
+                저는 산업공학과 데이터 분석을 기반으로 사용자와 시스템 사이의 상호작용을 연구하고 있습니다.
+                화면 위의 정보 구조가 사람의 이해, 판단, 몰입에 어떤 영향을 주는지에 관심이 있으며,
+                UI/UX 설계와 데이터 기반 해석을 연결하는 방향으로 연구를 확장하고 있습니다.
+              </p>
+              <p class="section-body">
+                최근에는 인터페이스 평가, 검색 UI, VR 환경에서의 사용자 경험,
+                그리고 인간 중심 설계 관점에서의 포용적 상호작용에 주목하고 있습니다.
+                또한 문제를 발견하고 구조화하는 과정에서 창업적 사고와 서비스적 시선이
+                연구 설계에 어떻게 연결될 수 있는지도 함께 고민하고 있습니다.
+              </p>
             </div>
           </div>
         </div>
@@ -74,52 +115,17 @@
         <div class="glass-panel research-content-block reveal">
           <h2 class="research-section-title">Abstract</h2>
           <p class="section-body">
-            이 페이지는 제가 UI/UX와 인간-시스템 상호작용에 관심을 가지게 된 배경부터,
-            관련 선행연구와 프로젝트, 현재 진행 중인 실험, 그리고 결과물 아카이브까지를
-            논문 흐름에 맞춰 정리한 연구 페이지입니다.
+            이 아카이브는 UI/UX, 창업적 사고, 몰입형 환경, 데이터 기반 분석의 접점에서
+            제가 관심을 두고 있는 연구 주제들을 정리한 페이지입니다.
+            저는 사용자가 인터페이스를 어떻게 인식하고, 정보 구조를 어떻게 해석하며,
+            그 과정이 사용성, 몰입, 의사결정에 어떤 영향을 미치는지에 관심이 있습니다.
           </p>
-
-          <div class="abstract-contents">
-            <div class="abstract-item">
-              <span>01</span>
-              <div>
-                <strong>Introduction</strong>
-                <p>UI/UX에 관심을 갖게 된 배경과 연구 방향</p>
-              </div>
-            </div>
-
-            <div class="abstract-item">
-              <span>02</span>
-              <div>
-                <strong>Prior Study</strong>
-                <p>관련 논문, 프로젝트, 기존 접근의 한계</p>
-              </div>
-            </div>
-
-            <div class="abstract-item">
-              <span>03</span>
-              <div>
-                <strong>Experiment</strong>
-                <p>현재 진행 중인 연구 및 실험 기록</p>
-              </div>
-            </div>
-
-            <div class="abstract-item">
-              <span>04</span>
-              <div>
-                <strong>Results</strong>
-                <p>연구 결과물, 인터페이스, 사진 및 아카이브</p>
-              </div>
-            </div>
-
-            <div class="abstract-item">
-              <span>05</span>
-              <div>
-                <strong>Future Work</strong>
-                <p>앞으로 확장하고 싶은 연구 주제와 방향성</p>
-              </div>
-            </div>
-          </div>
+          <p class="section-body">
+            현재는 인간 중심 설계와 평가를 바탕으로 인터페이스 경험, 연구 설계,
+            그리고 디지털 환경에서의 포용적 상호작용을 중심으로 연구를 확장하고 있습니다.
+            이 페이지는 단순한 작업 모음이 아니라, 제가 탐구하고 있는 문제와 방향을
+            하나의 연구 흐름으로 보여주기 위한 아카이브입니다.
+          </p>
         </div>
       </div>
     </section>
@@ -305,7 +311,7 @@
   <footer class="site-footer container">
     <div>
       <p class="footer-title">Songpyo Hong</p>
-      <p>Research archive on UI/UX, VR, and human-system interaction.</p>
+      <p>Research archive on UI/UX, entrepreneurship, and data-driven analysis.</p>
     </div>
     <div>
       <p><a href="mailto:songpyoh@gmail.com">songpyoh@gmail.com</a></p>
