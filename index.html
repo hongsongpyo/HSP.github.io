@@ -20,7 +20,7 @@
     </a>
 
     <nav class="top-nav">
-      <a href="performance.html" id="performance-link">Performance</a>
+      <a href="performance.html">Performance</a>
       <a href="research.html">Research</a>
     </nav>
   </header>
@@ -76,62 +76,6 @@
     </section>
   </main>
 
-  <!-- Performance page transition overlay -->
-  <div class="performance-transition" id="performance-transition" aria-hidden="true">
-    <div class="transition-blackout"></div>
-    <div class="transition-panel">
-      <div class="transition-shell">
-        <div class="transition-profile-ring"></div>
-
-        <div class="transition-cluster cluster-concert">
-          <span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-
-        <div class="transition-cluster cluster-photo">
-          <span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-
-        <div class="transition-cluster cluster-youtube">
-          <span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span><span></span>
-        </div>
-
-        <div class="transition-cluster cluster-sheet">
-          <span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-
-        <div class="transition-cluster cluster-hidden">
-          <span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span><span></span>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <script src="script.js"></script>
-  <script>
-    const performanceLink = document.getElementById("performance-link");
-    const performanceTransition = document.getElementById("performance-transition");
-
-    if (performanceLink && performanceTransition) {
-      performanceLink.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        document.body.classList.add("performance-transition-active");
-
-        setTimeout(() => {
-          window.location.href = performanceLink.href;
-        }, 900);
-      });
-    }
-  </script>
 </body>
 </html>
