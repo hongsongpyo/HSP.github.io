@@ -60,3 +60,26 @@ if (tocLinks.length && researchSections.length) {
 
   researchSections.forEach((section) => observer.observe(section));
 }
+
+const sliderButtons = document.querySelectorAll(".slider-btn");
+
+sliderButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const targetId = button.dataset.target;
+    const direction = Number(button.dataset.direction);
+    const track = document.getElementById(targetId);
+
+    if (!track) return;
+
+    const card = track.querySelector(".study-card");
+    if (!card) return;
+
+    const gap = 18;
+    const moveAmount = card.offsetWidth + gap;
+
+    track.scrollBy({
+      left: moveAmount * direction,
+      behavior: "smooth"
+    });
+  });
+});
